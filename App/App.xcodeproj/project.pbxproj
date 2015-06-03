@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70E142C1B1F250400747486 /* UIColor+Hexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E142B1B1F250400747486 /* UIColor+Hexa.swift */; };
+		A70E142D1B1F250400747486 /* UIColor+Hexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E142B1B1F250400747486 /* UIColor+Hexa.swift */; };
 		A79825191B18A6FC00F8E795 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79825181B18A6FC00F8E795 /* AppDelegate.swift */; };
 		A798251E1B18A6FC00F8E795 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A798251C1B18A6FC00F8E795 /* Main.storyboard */; };
 		A79825201B18A6FC00F8E795 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A798251F1B18A6FC00F8E795 /* Images.xcassets */; };
@@ -280,6 +282,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A70E142B1B1F250400747486 /* UIColor+Hexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hexa.swift"; sourceTree = "<group>"; };
 		A79825131B18A6FC00F8E795 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79825171B18A6FC00F8E795 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A79825181B18A6FC00F8E795 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = App/AppDelegate.swift; sourceTree = "<group>"; };
@@ -439,6 +442,7 @@
 		A79825401B18A77100F8E795 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A70E142B1B1F250400747486 /* UIColor+Hexa.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -857,6 +861,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A79825191B18A6FC00F8E795 /* AppDelegate.swift in Sources */,
+				A70E142C1B1F250400747486 /* UIColor+Hexa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -865,6 +870,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A798252F1B18A6FC00F8E795 /* AppTests.swift in Sources */,
+				A70E142D1B1F250400747486 /* UIColor+Hexa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
