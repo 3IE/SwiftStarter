@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A70E142C1B1F250400747486 /* UIColor+Hexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E142B1B1F250400747486 /* UIColor+Hexa.swift */; };
-		A70E142D1B1F250400747486 /* UIColor+Hexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E142B1B1F250400747486 /* UIColor+Hexa.swift */; };
+		A765CDE41B219606004CD54A /* UIColor+Hexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE31B219606004CD54A /* UIColor+Hexa.swift */; };
+		A765CDE51B219606004CD54A /* UIColor+Hexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE31B219606004CD54A /* UIColor+Hexa.swift */; };
+		A765CDE71B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */; };
+		A765CDE81B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */; };
+		A765CDED1B21C6C2004CD54A /* NSError+Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDEC1B21C6C2004CD54A /* NSError+Argo.swift */; };
+		A765CDEE1B21C6C2004CD54A /* NSError+Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDEC1B21C6C2004CD54A /* NSError+Argo.swift */; };
 		A79825191B18A6FC00F8E795 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79825181B18A6FC00F8E795 /* AppDelegate.swift */; };
 		A798251E1B18A6FC00F8E795 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A798251C1B18A6FC00F8E795 /* Main.storyboard */; };
 		A79825201B18A6FC00F8E795 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A798251F1B18A6FC00F8E795 /* Images.xcassets */; };
@@ -282,7 +286,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A70E142B1B1F250400747486 /* UIColor+Hexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hexa.swift"; sourceTree = "<group>"; };
+		A765CDE31B219606004CD54A /* UIColor+Hexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Hexa.swift"; path = "App/UIColor+Hexa.swift"; sourceTree = "<group>"; };
+		A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AlamofireRequest+Argo.swift"; path = "App/AlamofireRequest+Argo.swift"; sourceTree = "<group>"; };
+		A765CDEC1B21C6C2004CD54A /* NSError+Argo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSError+Argo.swift"; path = "App/NSError+Argo.swift"; sourceTree = "<group>"; };
 		A79825131B18A6FC00F8E795 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79825171B18A6FC00F8E795 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A79825181B18A6FC00F8E795 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = App/AppDelegate.swift; sourceTree = "<group>"; };
@@ -421,6 +427,7 @@
 		A798253D1B18A75600F8E795 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A765CDEC1B21C6C2004CD54A /* NSError+Argo.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -442,7 +449,8 @@
 		A79825401B18A77100F8E795 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				A70E142B1B1F250400747486 /* UIColor+Hexa.swift */,
+				A765CDE31B219606004CD54A /* UIColor+Hexa.swift */,
+				A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -860,8 +868,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A765CDED1B21C6C2004CD54A /* NSError+Argo.swift in Sources */,
 				A79825191B18A6FC00F8E795 /* AppDelegate.swift in Sources */,
-				A70E142C1B1F250400747486 /* UIColor+Hexa.swift in Sources */,
+				A765CDE71B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */,
+				A765CDE41B219606004CD54A /* UIColor+Hexa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,8 +879,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A765CDEE1B21C6C2004CD54A /* NSError+Argo.swift in Sources */,
 				A798252F1B18A6FC00F8E795 /* AppTests.swift in Sources */,
-				A70E142D1B1F250400747486 /* UIColor+Hexa.swift in Sources */,
+				A765CDE81B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */,
+				A765CDE51B219606004CD54A /* UIColor+Hexa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
