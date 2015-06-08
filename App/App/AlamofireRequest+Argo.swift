@@ -24,6 +24,8 @@ extension Alamofire.Request {
                     
                     handleSuccess(decodedObject, completionHandler)
                 }
+            } else {
+                completionHandler(success: false, successObject: nil, errorObject: NSError(error:ErrorType.NoResponse, message:"No Response"))
             }
         })
     }
@@ -40,10 +42,14 @@ extension Alamofire.Request {
                     
                     handleSuccess(decodedObject, completionHandler)
                 }
+            } else {
+                completionHandler(success: false, successObject: nil, errorObject: NSError(error:ErrorType.NoResponse, message:"No Response"))
             }
         })
     }
 }
+
+//MARK: - Helpers
 
 private func printValues(request: NSURLRequest, response: NSHTTPURLResponse?, alamofireError: NSError?) -> () {
     println("===============================")
@@ -57,16 +63,16 @@ private func handleErrorWithObject<T>(object: AnyObject, completionHandler: (suc
     if let decodedError: NSError? = decode(object) {
         completionHandler(success: false, successObject: nil, errorObject: decodedError)
     } else {
-        completionHandler(success: false, successObject: nil, errorObject: NSError(domain: "", code: -100, userInfo: ["app": "parsing error in error server"]))
+        completionHandler(success: false, successObject: nil, errorObject: NSError(error:ErrorType.Parsing, message:"parsing error in error server"))
     }
 }
 
 private func handleSuccess<T>(decodedObject: Decoded<T>, completionHandler: (success: Bool, successObject: T?, errorObject: NSError?) -> Void) -> Void {
     switch decodedObject {
     case .MissingKey(let message):
-        completionHandler(success: false, successObject: nil, errorObject: NSError(domain: "", code: -100, userInfo: ["app Missing Key": message]))
+        completionHandler(success: false, successObject: nil, errorObject: NSError(error:ErrorType.NoResponse, message:message))
     case .TypeMismatch(let message):
-        completionHandler(success: false, successObject: nil, errorObject: NSError(domain: "", code: -100, userInfo: ["app Type Mismatch": message]))
+        completionHandler(success: false, successObject: nil, errorObject: NSError(error:ErrorType.NoResponse, message:message))
     case .Success(let value):
         completionHandler(success: true, successObject: decodedObject.value, errorObject: nil)
     }
