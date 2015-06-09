@@ -15,8 +15,8 @@
 		A765CDEE1B21C6C2004CD54A /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDEC1B21C6C2004CD54A /* NSError.swift */; };
 		A765CDF31B25DDF8004CD54A /* NSURLRequest+Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF21B25DDF8004CD54A /* NSURLRequest+Body.swift */; };
 		A765CDF41B25DDF8004CD54A /* NSURLRequest+Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF21B25DDF8004CD54A /* NSURLRequest+Body.swift */; };
-		A765CDF61B25E191004CD54A /* NSURL+Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF51B25E191004CD54A /* NSURL+Root.swift */; };
-		A765CDF71B25E191004CD54A /* NSURL+Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF51B25E191004CD54A /* NSURL+Root.swift */; };
+		A765CDF61B25E191004CD54A /* NSBundle+Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF51B25E191004CD54A /* NSBundle+Root.swift */; };
+		A765CDF71B25E191004CD54A /* NSBundle+Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF51B25E191004CD54A /* NSBundle+Root.swift */; };
 		A79825191B18A6FC00F8E795 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79825181B18A6FC00F8E795 /* AppDelegate.swift */; };
 		A798251E1B18A6FC00F8E795 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A798251C1B18A6FC00F8E795 /* Main.storyboard */; };
 		A79825201B18A6FC00F8E795 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A798251F1B18A6FC00F8E795 /* Images.xcassets */; };
@@ -294,7 +294,7 @@
 		A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AlamofireRequest+Argo.swift"; path = "App/AlamofireRequest+Argo.swift"; sourceTree = "<group>"; };
 		A765CDEC1B21C6C2004CD54A /* NSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSError.swift; path = App/NSError.swift; sourceTree = "<group>"; };
 		A765CDF21B25DDF8004CD54A /* NSURLRequest+Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURLRequest+Body.swift"; path = "App/NSURLRequest+Body.swift"; sourceTree = "<group>"; };
-		A765CDF51B25E191004CD54A /* NSURL+Root.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURL+Root.swift"; path = "App/NSURL+Root.swift"; sourceTree = "<group>"; };
+		A765CDF51B25E191004CD54A /* NSBundle+Root.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSBundle+Root.swift"; path = "App/NSBundle+Root.swift"; sourceTree = "<group>"; };
 		A79825131B18A6FC00F8E795 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79825171B18A6FC00F8E795 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A79825181B18A6FC00F8E795 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = App/AppDelegate.swift; sourceTree = "<group>"; };
@@ -458,7 +458,7 @@
 				A765CDE31B219606004CD54A /* UIColor+Hexa.swift */,
 				A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */,
 				A765CDF21B25DDF8004CD54A /* NSURLRequest+Body.swift */,
-				A765CDF51B25E191004CD54A /* NSURL+Root.swift */,
+				A765CDF51B25E191004CD54A /* NSBundle+Root.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -878,7 +878,7 @@
 			files = (
 				A765CDF31B25DDF8004CD54A /* NSURLRequest+Body.swift in Sources */,
 				A765CDED1B21C6C2004CD54A /* NSError.swift in Sources */,
-				A765CDF61B25E191004CD54A /* NSURL+Root.swift in Sources */,
+				A765CDF61B25E191004CD54A /* NSBundle+Root.swift in Sources */,
 				A79825191B18A6FC00F8E795 /* AppDelegate.swift in Sources */,
 				A765CDE71B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */,
 				A765CDE41B219606004CD54A /* UIColor+Hexa.swift in Sources */,
@@ -891,7 +891,7 @@
 			files = (
 				A765CDF41B25DDF8004CD54A /* NSURLRequest+Body.swift in Sources */,
 				A765CDEE1B21C6C2004CD54A /* NSError.swift in Sources */,
-				A765CDF71B25E191004CD54A /* NSURL+Root.swift in Sources */,
+				A765CDF71B25E191004CD54A /* NSBundle+Root.swift in Sources */,
 				A798252F1B18A6FC00F8E795 /* AppTests.swift in Sources */,
 				A765CDE81B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */,
 				A765CDE51B219606004CD54A /* UIColor+Hexa.swift in Sources */,

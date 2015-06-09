@@ -9,9 +9,9 @@
 import Foundation
 import Alamofire
 
-public extension NSMutableURLRequest {
-    public convenience init?(path: String, method: Alamofire.Method) {
-        let URL = NSURL(string: NSURL.getRootEndpoint())!
+internal extension NSMutableURLRequest {
+    internal convenience init?(path: String, method: Alamofire.Method) {
+        let URL = NSURL(string: NSBundle.getRootEndpoint())!
         self.init(URL: URL.URLByAppendingPathComponent(path))
         
         self.HTTPMethod = method.rawValue

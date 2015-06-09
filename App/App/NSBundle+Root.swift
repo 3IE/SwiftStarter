@@ -8,8 +8,8 @@
 
 import Foundation
 
-public extension NSURL {
-    public static func getRootEndpoint() -> String {
+internal extension NSBundle {
+    internal static func getRootEndpoint() -> String {
         return NSBundle.mainBundle().objectForInfoDictionaryKey("kRootEndpoint") as? String ?? ""
     }
     
