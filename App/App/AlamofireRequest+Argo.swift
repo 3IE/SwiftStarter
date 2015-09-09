@@ -9,71 +9,74 @@
 import Foundation
 import Alamofire
 import Argo
-import Runes
+import Curry
 
 extension Alamofire.Request {
-    public func responseArgoObject<T: Decodable where T == T.DecodedType>(completionHandler: (success: Bool, successObject: T?, errorObject: NSError?) -> Void) -> Self {
-        return response(serializer: Request.JSONResponseSerializer(), completionHandler: { (request, response, responseJSON, alamofireError) in
-            printValues(request, response, alamofireError)
+    public func responseArgoObject<T: Decodable where T == T.DecodedType>(completionHandler: (success: Bool, successObject: T?, errorObject: AppError?) -> Void) -> Self {
+        return responseJSON(completionHandler: { (request, response, result) -> Void in
+            printValues(request, response: response, result: result)
             
-            if let object: AnyObject = responseJSON {
-                if let error = alamofireError {
-                    handleErrorWithObject(object, completionHandler)
+            switch (result) {
+            case .Success(let value):
+                let decodedObject: Decoded<T> = decode(value)
+                
+                handleSuccess(decodedObject, completionHandler: completionHandler)
+            case .Failure(let data, _):
+                if let errorData: NSData = data {
+                    handleErrorWithObject(errorData, completionHandler: completionHandler)
                 } else {
-                    let decodedObject: Decoded<T> = decode(object)
-                    
-                    handleSuccess(decodedObject, completionHandler)
+                    completionHandler(success: false, successObject: nil, errorObject: AppError.NoResponse("No Response"))
                 }
-            } else {
-                completionHandler(success: false, successObject: nil, errorObject: NSError(error:ErrorType.NoResponse, message:"No Response"))
             }
         })
     }
     
-    public func responseArgoArray<T: Decodable where T == T.DecodedType>(completionHandler: (success: Bool, successObject: [T]?, errorObject: NSError?) -> Void) -> Self {
-        return response(serializer: Request.JSONResponseSerializer(), completionHandler: { (request, response, responseJSON, alamofireError) in
-            printValues(request, response, alamofireError)
+    public func responseArgoArray<T: Decodable where T == T.DecodedType>(completionHandler: (success: Bool, successObject: [T]?, errorObject: AppError?) -> Void) -> Self {
+        return responseJSON(completionHandler: { (request, response, result) -> Void in
+            printValues(request, response: response, result: result)
             
-            if let object: AnyObject = responseJSON {
-                if let error = alamofireError {
-                    handleErrorWithObject(object, completionHandler)
+            switch (result) {
+            case .Success(let value):
+                let decodedObject: Decoded<[T]> = decode(value)
+                
+                handleSuccess(decodedObject, completionHandler: completionHandler)
+            case .Failure(let data, _):
+                if let errorData: NSData = data {
+                    handleErrorWithObject(errorData, completionHandler: completionHandler)
                 } else {
-                    let decodedObject: Decoded<[T]> = decode(object)
-                    
-                    handleSuccess(decodedObject, completionHandler)
+                    completionHandler(success: false, successObject: nil, errorObject: AppError.NoResponse("No Response"))
                 }
-            } else {
-                completionHandler(success: false, successObject: nil, errorObject: NSError(error:ErrorType.NoResponse, message:"No Response"))
             }
         })
     }
 }
 
+
 //MARK: - Helpers
 
-private func printValues(request: NSURLRequest, response: NSHTTPURLResponse?, alamofireError: NSError?) -> () {
-    println("===============================")
-    println(request)
-    println(response)
-    println(alamofireError)
-    println("===============================")
+private func printValues(request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<AnyObject>) -> () {
+    print("===============================")
+    print(request)
+    print(response)
+    print(result)
+    print("===============================")
 }
 
-private func handleErrorWithObject<T>(object: AnyObject, completionHandler: (success: Bool, successObject: T?, errorObject: NSError?) -> Void) -> Void {
-    if let decodedError: NSError? = decode(object) {
+private func handleErrorWithObject<T>(object: AnyObject, completionHandler: (success: Bool, successObject: T?, errorObject: AppError?) -> Void) -> Void {
+    if let decodedError: AppError = decode(object) {
         completionHandler(success: false, successObject: nil, errorObject: decodedError)
     } else {
-        completionHandler(success: false, successObject: nil, errorObject: NSError(error:ErrorType.Parsing, message:"parsing error in error server"))
+        completionHandler(success: false, successObject: nil, errorObject: AppError.Parsing("parsing error in error server"))
     }
 }
 
-private func handleSuccess<T>(decodedObject: Decoded<T>, completionHandler: (success: Bool, successObject: T?, errorObject: NSError?) -> Void) -> Void {
+private func handleSuccess<T>(decodedObject: Decoded<T>, completionHandler: (success: Bool, successObject: T?, errorObject: AppError?) -> Void) -> Void {
     switch decodedObject {
     case .MissingKey(let message):
-        completionHandler(success: false, successObject: nil, errorObject: NSError(error:ErrorType.NoResponse, message:message))
+        completionHandler(success: false, successObject: nil, errorObject: AppError.MissingKey(message))
     case .TypeMismatch(let message):
-        completionHandler(success: false, successObject: nil, errorObject: NSError(error:ErrorType.NoResponse, message:message))
+        completionHandler(success: false, successObject: nil, errorObject: AppError.TypeMismatch(message))
     case .Success(let value):
-        completionHandler(success: true, successObject: decodedObject.value, errorObject: nil)
+        completionHandler(success: true, successObject: value, errorObject: nil)
     }
 }
