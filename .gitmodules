@@ -1,0 +1,15 @@
+[submodule "App/Frameworks/Alamofire"]
+	path = App/Frameworks/Alamofire
+	url = https://github.com/Alamofire/Alamofire.git
+[submodule "App/Frameworks/KingFisher"]
+	path = App/Frameworks/KingFisher
+	url = https://github.com/onevcat/Kingfisher.git
+[submodule "App/Frameworks/OHTTPStubs"]
+	path = App/Frameworks/OHTTPStubs
+	url = https://github.com/AliSoftware/OHHTTPStubs.git
+[submodule "App/Frameworks/Argo"]
+	path = App/Frameworks/Argo
+	url = https://github.com/thoughtbot/Argo.git
+[submodule "App/Frameworks/Curry"]
+	path = App/Frameworks/Curry
+	url = https://github.com/thoughtbot/Curry.git
