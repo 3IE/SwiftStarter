@@ -72,10 +72,13 @@ private func handleErrorWithObject<T>(object: AnyObject, completionHandler: (suc
 
 private func handleSuccess<T>(decodedObject: Decoded<T>, completionHandler: (success: Bool, successObject: T?, errorObject: AppError?) -> Void) -> Void {
     switch decodedObject {
-    case .MissingKey(let message):
-        completionHandler(success: false, successObject: nil, errorObject: AppError.MissingKey(message))
-    case .TypeMismatch(let message):
-        completionHandler(success: false, successObject: nil, errorObject: AppError.TypeMismatch(message))
+    case .Failure(let decodedError):
+        switch decodedError {
+        case .MissingKey(let message):
+            completionHandler(success: false, successObject: nil, errorObject: AppError.MissingKey(message))
+        case .TypeMismatch(expected: let expected, actual: let actual):
+            completionHandler(success: false, successObject: nil, errorObject: AppError.TypeMismatch(expected, actual))
+        }
     case .Success(let value):
         completionHandler(success: true, successObject: value, errorObject: nil)
     }
