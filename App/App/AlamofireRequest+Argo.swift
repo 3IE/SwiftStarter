@@ -62,10 +62,15 @@ private func printValues(request: NSURLRequest?, response: NSHTTPURLResponse?, r
     print("===============================")
 }
 
-private func handleErrorWithObject<T>(object: AnyObject, completionHandler: (success: Bool, successObject: T?, errorObject: AppError?) -> Void) -> Void {
-    if let decodedError: AppError = decode(object) {
-        completionHandler(success: false, successObject: nil, errorObject: decodedError)
-    } else {
+private func handleErrorWithObject<T>(object: NSData, completionHandler: (success: Bool, successObject: T?, errorObject: AppError?) -> Void) -> Void {
+    do {
+        let JSON = try NSJSONSerialization.JSONObjectWithData(object, options: NSJSONReadingOptions.AllowFragments)
+        if let decodedError: AppError = decode(JSON) {
+            completionHandler(success: false, successObject: nil, errorObject: decodedError)
+        } else {
+            completionHandler(success: false, successObject: nil, errorObject: AppError.Parsing("parsing error in error server"))
+        }
+    } catch {
         completionHandler(success: false, successObject: nil, errorObject: AppError.Parsing("parsing error in error server"))
     }
 }
