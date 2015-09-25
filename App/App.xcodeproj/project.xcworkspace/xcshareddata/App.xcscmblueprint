@@ -1,0 +1,65 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D31E8BA8C25DBCF0B9FEE3B12A925BFC24CE14B8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "39CB70283A1C33AFB5FF861E924945826EDC74FE" : 0,
+    "194A7A54F3CE0138A6C320E0643B7C60F8218891" : 0,
+    "38C2A0D4F62B675E8C16C8BC1437C7753846C8AC" : 0,
+    "D31E8BA8C25DBCF0B9FEE3B12A925BFC24CE14B8" : 0,
+    "67620B5EFA902936DF04070AF595B76AB0333747" : 0,
+    "D2AD29AE1B693121D0EDBB4855C96B75ECBB0D86" : 0,
+    "0A5C3A6DB1EA9211CEFA5384E9882B4D710699A4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A5872678-8D2F-4FB6-A44D-0C637E3E6E86",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "39CB70283A1C33AFB5FF861E924945826EDC74FE" : "starterkit-ios\/App\/Frameworks\/Argo\/",
+    "194A7A54F3CE0138A6C320E0643B7C60F8218891" : "starterkit-ios\/App\/Frameworks\/Curry\/",
+    "38C2A0D4F62B675E8C16C8BC1437C7753846C8AC" : "starterkit-ios\/App\/Frameworks\/OHHTTPStubs\/",
+    "D31E8BA8C25DBCF0B9FEE3B12A925BFC24CE14B8" : "starterkit-ios\/",
+    "67620B5EFA902936DF04070AF595B76AB0333747" : "starterkit-ios\/App\/Frameworks\/Alamofire\/",
+    "D2AD29AE1B693121D0EDBB4855C96B75ECBB0D86" : "starterkit-ios\/App\/Frameworks\/AlamofireImage\/",
+    "0A5C3A6DB1EA9211CEFA5384E9882B4D710699A4" : "starterkit-ios\/App\/Frameworks\/Argo\/Carthage\/Checkouts\/runes\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "App",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "App\/App.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/thoughtbot\/Runes.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0A5C3A6DB1EA9211CEFA5384E9882B4D710699A4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/thoughtbot\/Curry.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "194A7A54F3CE0138A6C320E0643B7C60F8218891"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AliSoftware\/OHHTTPStubs.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "38C2A0D4F62B675E8C16C8BC1437C7753846C8AC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/thoughtbot\/Argo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "39CB70283A1C33AFB5FF861E924945826EDC74FE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/AlamofireImage.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D2AD29AE1B693121D0EDBB4855C96B75ECBB0D86"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/3ie\/starterkit-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D31E8BA8C25DBCF0B9FEE3B12A925BFC24CE14B8"
+    }
+  ]
+}

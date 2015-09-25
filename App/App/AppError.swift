@@ -13,7 +13,7 @@ import Curry
 public enum AppError: ErrorType {
     case NoResponse(String)
     case Parsing(String)
-    case TypeMismatch(String)
+    case TypeMismatch(String, String)
     case MissingKey(String)
     case Server(Int, String)
     
@@ -28,8 +28,8 @@ public enum AppError: ErrorType {
     
     var message: String {
         switch self {
-        case .TypeMismatch(let message):
-            return "[ARGO] app Type Mismatch : " + message
+        case .TypeMismatch(let expected, let actual):
+            return "[ARGO] app Type Mismatch : expected " + expected + ", actual " + actual
         case .MissingKey(let message):
             return "[ARGO] app missing key : " + message
         case .Server(_, let message):
