@@ -66,11 +66,6 @@ private func printValues<Value, Error>(request: NSURLRequest?, response: NSHTTPU
 }
 
 private func handleErrorWithObject<T>(object: AnyObject, completionHandler: (success: Bool, successObject: T?, errorObject: AppError?) -> Void) -> Void {
-    /*if let decodedError: AppError = decode(object) {
-    completionHandler(success: false, successObject: nil, errorObject: decodedError)
-    } else {
-    completionHandler(success: false, successObject: nil, errorObject: AppError.Parsing("parsing error in error server"))
-    }*/
     do {
         let JSON = try NSJSONSerialization.JSONObjectWithData(object as! NSData, options: NSJSONReadingOptions.AllowFragments)
         if let decodedError: AppError = decode(JSON) {
@@ -89,8 +84,8 @@ private func handleSuccess<T>(decodedObject: Decoded<T>, completionHandler: (suc
         switch error {
         case .MissingKey(let message):
             completionHandler(success: false, successObject: nil, errorObject: AppError.MissingKey(message))
-        case .TypeMismatch(let message, let value):
-            completionHandler(success: false, successObject: nil, errorObject: AppError.TypeMismatch(message, value))
+        case .TypeMismatch(let expected, let actual):
+            completionHandler(success: false, successObject: nil, errorObject: AppError.TypeMismatch(expected, actual))
         case .Custom(let message):
             completionHandler(success: false, successObject: nil, errorObject: AppError.TypeMismatch(message, ""))
         }
