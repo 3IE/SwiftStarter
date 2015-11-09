@@ -89,10 +89,10 @@ private func handleSuccess<T>(decodedObject: Decoded<T>, completionHandler: (suc
         switch error {
         case .MissingKey(let message):
             completionHandler(success: false, successObject: nil, errorObject: AppError.MissingKey(message))
-        case .TypeMismatch(let message, _):
-            completionHandler(success: false, successObject: nil, errorObject: AppError.TypeMismatch(message))
+        case .TypeMismatch(let message, let value):
+            completionHandler(success: false, successObject: nil, errorObject: AppError.TypeMismatch(message, value))
         case .Custom(let message):
-            completionHandler(success: false, successObject: nil, errorObject: AppError.TypeMismatch(message))
+            completionHandler(success: false, successObject: nil, errorObject: AppError.TypeMismatch(message, ""))
         }
     case .Success(let value):
         completionHandler(success: true, successObject: value, errorObject: nil)
