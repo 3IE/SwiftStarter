@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class ServiceMain
+class DataAccessMain
 {
     internal static func getRootApiUrl() -> String {
         if let apiEndRoot = NSBundle.getRootEndpoint() as String? {

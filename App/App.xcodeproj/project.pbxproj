@@ -12,7 +12,7 @@
 		8D503B5E1BA057A600C84F58 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D503B581BA0577700C84F58 /* Curry.framework */; };
 		8D503B5F1BA057A600C84F58 /* Curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D503B581BA0577700C84F58 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D503B681BA059AD00C84F58 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B671BA059AD00C84F58 /* AppError.swift */; settings = {ASSET_TAGS = (); }; };
-		8D503B6A1BA0634500C84F58 /* ServiceMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B691BA0634500C84F58 /* ServiceMain.swift */; settings = {ASSET_TAGS = (); }; };
+		8D503B6A1BA0634500C84F58 /* DataAccessMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B691BA0634500C84F58 /* DataAccessMain.swift */; settings = {ASSET_TAGS = (); }; };
 		8DCF73281BA172DC00C2B3A9 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DCF731F1BA172D100C2B3A9 /* AlamofireImage.framework */; };
 		8DCF73291BA172DC00C2B3A9 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8DCF731F1BA172D100C2B3A9 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A765CDE41B219606004CD54A /* UIColor+Hexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE31B219606004CD54A /* UIColor+Hexa.swift */; };
@@ -217,7 +217,7 @@
 		8D3EBF511BB17849009AC9D0 /* Argo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Argo.xcodeproj; path = Frameworks/Argo/Argo.xcodeproj; sourceTree = "<group>"; };
 		8D503B4C1BA0577700C84F58 /* Curry.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Curry.xcodeproj; path = Frameworks/Curry/Curry.xcodeproj; sourceTree = "<group>"; };
 		8D503B671BA059AD00C84F58 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppError.swift; path = App/AppError.swift; sourceTree = "<group>"; };
-		8D503B691BA0634500C84F58 /* ServiceMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceMain.swift; path = App/ServiceMain.swift; sourceTree = "<group>"; };
+		8D503B691BA0634500C84F58 /* DataAccessMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataAccessMain.swift; path = App/DataAccessMain.swift; sourceTree = "<group>"; };
 		8DCF73151BA172D100C2B3A9 /* AlamofireImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AlamofireImage.xcodeproj; path = Frameworks/AlamofireImage/AlamofireImage.xcodeproj; sourceTree = "<group>"; };
 		A765CDE31B219606004CD54A /* UIColor+Hexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Hexa.swift"; path = "App/UIColor+Hexa.swift"; sourceTree = "<group>"; };
 		A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AlamofireRequest+Argo.swift"; path = "App/AlamofireRequest+Argo.swift"; sourceTree = "<group>"; };
@@ -349,7 +349,7 @@
 			children = (
 				A79825181B18A6FC00F8E795 /* AppDelegate.swift */,
 				A79825401B18A77100F8E795 /* Utils */,
-				A798253F1B18A76900F8E795 /* Services */,
+				A798253F1B18A76900F8E795 /* DataAccess */,
 				A798253E1B18A75F00F8E795 /* Business */,
 				A798253D1B18A75600F8E795 /* Models */,
 				A798253C1B18A74C00F8E795 /* Views */,
@@ -400,13 +400,13 @@
 			name = Business;
 			sourceTree = "<group>";
 		};
-		A798253F1B18A76900F8E795 /* Services */ = {
+		A798253F1B18A76900F8E795 /* DataAccess */ = {
 			isa = PBXGroup;
 			children = (
 				A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */,
-				8D503B691BA0634500C84F58 /* ServiceMain.swift */,
+				8D503B691BA0634500C84F58 /* DataAccessMain.swift */,
 			);
-			name = Services;
+			name = DataAccess;
 			sourceTree = "<group>";
 		};
 		A79825401B18A77100F8E795 /* Utils */ = {
@@ -709,7 +709,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D503B6A1BA0634500C84F58 /* ServiceMain.swift in Sources */,
+				8D503B6A1BA0634500C84F58 /* DataAccessMain.swift in Sources */,
 				A765CDF31B25DDF8004CD54A /* NSURLRequest+Body.swift in Sources */,
 				A765CDF61B25E191004CD54A /* NSBundle+Root.swift in Sources */,
 				A79825191B18A6FC00F8E795 /* AppDelegate.swift in Sources */,
@@ -814,6 +814,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -823,8 +824,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WARNING_CFLAGS = (
+					"-Wextra",
+					"-Wall",
+				);
 			};
 			name = Debug;
 		};
@@ -853,6 +859,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -861,8 +868,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = (
+					"-Wextra",
+					"-Wall",
+				);
 			};
 			name = Release;
 		};
