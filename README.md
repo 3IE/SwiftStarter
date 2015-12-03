@@ -30,9 +30,9 @@ The `utils` folder is the one that will contains some general classes with helpe
 
 The `Models` folder contains the description (classes) of the data we have to manipulate in our application to do the app business.
 
-#### Services
+#### DataAccess
 
-The `Services` folder contains files that will provide some services to our business. For example, calling a webservice is a service. But services are not necessarily webservices calls. Services may be calls to a CoreData database or call to get some data written in the phone memory.
+The `DataAccess` folder contains files that will provide some services to our business. For example, calling a webservice is a service. But services are not necessarily webservices calls. Services may be calls to a CoreData database or call to get some data written in the phone memory.
 
 #### Business
 
