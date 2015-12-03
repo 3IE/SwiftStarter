@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 import Argo
-import Curry
 
 extension Alamofire.Request {
     public func responseArgoObject<T: Decodable where T == T.DecodedType>(completionHandler: (success: Bool, successObject: T?, errorObject: AppError?) -> Void) -> Self {
