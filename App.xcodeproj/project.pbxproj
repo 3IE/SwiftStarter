@@ -11,6 +11,12 @@
 		177691BD1C10C13E00A3D08A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BA1C10C13E00A3D08A /* AlamofireImage.framework */; };
 		177691BE1C10C13E00A3D08A /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BB1C10C13E00A3D08A /* Argo.framework */; };
 		177691C11C10C25500A3D08A /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691C01C10C25500A3D08A /* Curry.framework */; };
+		17E39DFD1C157FD100D3BFBC /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691C01C10C25500A3D08A /* Curry.framework */; };
+		17E39DFE1C157FD400D3BFBC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691B91C10C13E00A3D08A /* Alamofire.framework */; };
+		17E39DFF1C157FD700D3BFBC /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BA1C10C13E00A3D08A /* AlamofireImage.framework */; };
+		17E39E001C157FDA00D3BFBC /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BB1C10C13E00A3D08A /* Argo.framework */; };
+		17E39E011C157FEC00D3BFBC /* DataAccessMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B691BA0634500C84F58 /* DataAccessMain.swift */; };
+		17E39E021C157FFB00D3BFBC /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B671BA059AD00C84F58 /* AppError.swift */; };
 		8D503B681BA059AD00C84F58 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B671BA059AD00C84F58 /* AppError.swift */; };
 		8D503B6A1BA0634500C84F58 /* DataAccessMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B691BA0634500C84F58 /* DataAccessMain.swift */; };
 		A765CDE41B219606004CD54A /* UIColor+Hexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE31B219606004CD54A /* UIColor+Hexa.swift */; };
@@ -89,6 +95,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E39DFF1C157FD700D3BFBC /* AlamofireImage.framework in Frameworks */,
+				17E39DFD1C157FD100D3BFBC /* Curry.framework in Frameworks */,
+				17E39DFE1C157FD400D3BFBC /* Alamofire.framework in Frameworks */,
+				17E39E001C157FDA00D3BFBC /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +391,9 @@
 				A765CDF71B25E191004CD54A /* NSBundle+Root.swift in Sources */,
 				A798252F1B18A6FC00F8E795 /* AppTests.swift in Sources */,
 				A765CDE81B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */,
+				17E39E011C157FEC00D3BFBC /* DataAccessMain.swift in Sources */,
 				A765CDE51B219606004CD54A /* UIColor+Hexa.swift in Sources */,
+				17E39E021C157FFB00D3BFBC /* AppError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +563,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -571,6 +584,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = AppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
