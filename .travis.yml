@@ -9,3 +9,7 @@ before_install:
 - rm "Carthage.pkg"
 before_script:
 - carthage bootstrap --platform iOS
+notifications:
+  email:
+    on_success: change
+    on_failure: always
