@@ -105,6 +105,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17965D531C561B030013D390 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				177691C01C10C25500A3D08A /* Curry.framework */,
+				177691B91C10C13E00A3D08A /* Alamofire.framework */,
+				177691BA1C10C13E00A3D08A /* AlamofireImage.framework */,
+				177691BB1C10C13E00A3D08A /* Argo.framework */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		17965D541C561B0C0013D390 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Internal;
+			sourceTree = "<group>";
+		};
 		A798250A1B18A6FC00F8E795 = {
 			isa = PBXGroup;
 			children = (
@@ -175,10 +193,8 @@
 		A79825391B18A71000F8E795 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				177691C01C10C25500A3D08A /* Curry.framework */,
-				177691B91C10C13E00A3D08A /* Alamofire.framework */,
-				177691BA1C10C13E00A3D08A /* AlamofireImage.framework */,
-				177691BB1C10C13E00A3D08A /* Argo.framework */,
+				17965D541C561B0C0013D390 /* Internal */,
+				17965D531C561B030013D390 /* External */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

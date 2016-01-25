@@ -49,7 +49,7 @@ The `Controllers` folder contains all your controllers files (eg. UIViewControll
 
   - Swift
 
-  This `Swift` folder contains some classes describing special behavior for some components. It basicaly contains subclasses of UIView type (eg. UILabel, UIButton, UIView, UITableView ...). This folder is also handy to store IBDesignables and IBInspectables you create.
+  This `Swift` folder contains some classes describing special behavior for some components. It basically contains subclasses of UIView type (eg. UILabel, UIButton, UIView, UITableView ...). This folder is also handy to store IBDesignables and IBInspectables you create.
 
   - Xib
 
@@ -78,3 +78,16 @@ In this starter kit, we provide several external frameworks that we use in our p
 <a href="https://github.com/thoughtbot/Curry.git">Curry</a> is a currying component library for Argo.
 
 <a href="https://github.com/AliSoftware/OHHTTPStubs.git">OHHTTPStubs</a> is a library to stub your network requests. It is useful for unit testing purpose.
+
+## Installing the external frameworks
+
+We use carthage, so you have to compile the frameworks from a terminal before compiling the project.
+Run this command to download and compile the frameworks referenced in the 'Cartfile.resolved' file.
+```shell
+$ carthage bootstrap --platform iOS
+```
+
+To update to the latest version of the frameworks (referenced in the 'Cartfile') and regenerate 'Cartfile.resolved' file, run this command :
+```shell
+$ carthage update --platform iOS
+```
