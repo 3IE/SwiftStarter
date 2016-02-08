@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172F50451C68E6D0000A9D78 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172F50431C68E6D0000A9D78 /* AlamofireObjectMapper.framework */; };
+		172F50461C68E6D0000A9D78 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172F50441C68E6D0000A9D78 /* ObjectMapper.framework */; };
 		177691BC1C10C13E00A3D08A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691B91C10C13E00A3D08A /* Alamofire.framework */; };
 		177691BD1C10C13E00A3D08A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BA1C10C13E00A3D08A /* AlamofireImage.framework */; };
 		177691BE1C10C13E00A3D08A /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BB1C10C13E00A3D08A /* Argo.framework */; };
@@ -58,6 +60,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		172F50431C68E6D0000A9D78 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
+		172F50441C68E6D0000A9D78 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		177691B91C10C13E00A3D08A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		177691BA1C10C13E00A3D08A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		177691BB1C10C13E00A3D08A /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172F50451C68E6D0000A9D78 /* AlamofireObjectMapper.framework in Frameworks */,
+				172F50461C68E6D0000A9D78 /* ObjectMapper.framework in Frameworks */,
 				177691BC1C10C13E00A3D08A /* Alamofire.framework in Frameworks */,
 				177691BD1C10C13E00A3D08A /* AlamofireImage.framework in Frameworks */,
 				177691BE1C10C13E00A3D08A /* Argo.framework in Frameworks */,
@@ -193,6 +199,8 @@
 		A79825391B18A71000F8E795 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				172F50431C68E6D0000A9D78 /* AlamofireObjectMapper.framework */,
+				172F50441C68E6D0000A9D78 /* ObjectMapper.framework */,
 				17965D541C561B0C0013D390 /* Internal */,
 				17965D531C561B030013D390 /* External */,
 			);
@@ -375,6 +383,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Curry.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 			);
 			outputPaths = (
 			);
