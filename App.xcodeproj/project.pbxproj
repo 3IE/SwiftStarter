@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		172F50451C68E6D0000A9D78 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172F50431C68E6D0000A9D78 /* AlamofireObjectMapper.framework */; };
 		172F50461C68E6D0000A9D78 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172F50441C68E6D0000A9D78 /* ObjectMapper.framework */; };
+		172FE3431C69F0FA00496519 /* QueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172FE3421C69F0FA00496519 /* QueryResponse.swift */; };
+		172FE3451C6A170C00496519 /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172FE3441C6A170C00496519 /* WeatherCondition.swift */; };
 		177691BC1C10C13E00A3D08A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691B91C10C13E00A3D08A /* Alamofire.framework */; };
 		177691BD1C10C13E00A3D08A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BA1C10C13E00A3D08A /* AlamofireImage.framework */; };
 		17E39DFE1C157FD400D3BFBC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691B91C10C13E00A3D08A /* Alamofire.framework */; };
 		17E39DFF1C157FD700D3BFBC /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BA1C10C13E00A3D08A /* AlamofireImage.framework */; };
 		17E39E011C157FEC00D3BFBC /* DataAccessMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B691BA0634500C84F58 /* DataAccessMain.swift */; };
 		17E39E021C157FFB00D3BFBC /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B671BA059AD00C84F58 /* AppError.swift */; };
+		17E48EAD1C6A260000D0B0B0 /* IntTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E48EAC1C6A260000D0B0B0 /* IntTransform.swift */; };
 		8D503B681BA059AD00C84F58 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B671BA059AD00C84F58 /* AppError.swift */; };
 		8D503B6A1BA0634500C84F58 /* DataAccessMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B691BA0634500C84F58 /* DataAccessMain.swift */; };
 		A765CDE41B219606004CD54A /* UIColor+Hexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE31B219606004CD54A /* UIColor+Hexa.swift */; };
@@ -56,12 +59,14 @@
 /* Begin PBXFileReference section */
 		172F50431C68E6D0000A9D78 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
 		172F50441C68E6D0000A9D78 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		172FE3421C69F0FA00496519 /* QueryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryResponse.swift; path = App/QueryResponse.swift; sourceTree = "<group>"; };
+		172FE3441C6A170C00496519 /* WeatherCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
 		177691B91C10C13E00A3D08A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		177691BA1C10C13E00A3D08A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		17E48EAC1C6A260000D0B0B0 /* IntTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTransform.swift; sourceTree = "<group>"; };
 		8D503B671BA059AD00C84F58 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppError.swift; path = App/AppError.swift; sourceTree = "<group>"; };
 		8D503B691BA0634500C84F58 /* DataAccessMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataAccessMain.swift; path = App/DataAccessMain.swift; sourceTree = "<group>"; };
 		A765CDE31B219606004CD54A /* UIColor+Hexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Hexa.swift"; path = "App/UIColor+Hexa.swift"; sourceTree = "<group>"; };
-		A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AlamofireRequest+Argo.swift"; path = "App/AlamofireRequest+Argo.swift"; sourceTree = "<group>"; };
 		A765CDF21B25DDF8004CD54A /* NSURLRequest+Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURLRequest+Body.swift"; path = "App/NSURLRequest+Body.swift"; sourceTree = "<group>"; };
 		A765CDF51B25E191004CD54A /* NSBundle+Root.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSBundle+Root.swift"; path = "App/NSBundle+Root.swift"; sourceTree = "<group>"; };
 		A79825131B18A6FC00F8E795 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				8D503B671BA059AD00C84F58 /* AppError.swift */,
+				172FE3421C69F0FA00496519 /* QueryResponse.swift */,
+				172FE3441C6A170C00496519 /* WeatherCondition.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -230,8 +237,8 @@
 		A798253F1B18A76900F8E795 /* DataAccess */ = {
 			isa = PBXGroup;
 			children = (
-				A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */,
 				8D503B691BA0634500C84F58 /* DataAccessMain.swift */,
+				17E48EAC1C6A260000D0B0B0 /* IntTransform.swift */,
 			);
 			name = DataAccess;
 			sourceTree = "<group>";
@@ -308,7 +315,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = "Cédric Eugeni";
+				ORGANIZATIONNAME = "3IE";
 				TargetAttributes = {
 					A79825121B18A6FC00F8E795 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -383,11 +390,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172FE3451C6A170C00496519 /* WeatherCondition.swift in Sources */,
 				8D503B6A1BA0634500C84F58 /* DataAccessMain.swift in Sources */,
 				A765CDF31B25DDF8004CD54A /* NSURLRequest+Body.swift in Sources */,
+				172FE3431C69F0FA00496519 /* QueryResponse.swift in Sources */,
 				A765CDF61B25E191004CD54A /* NSBundle+Root.swift in Sources */,
 				A79825191B18A6FC00F8E795 /* AppDelegate.swift in Sources */,
 				A765CDE41B219606004CD54A /* UIColor+Hexa.swift in Sources */,
+				17E48EAD1C6A260000D0B0B0 /* IntTransform.swift in Sources */,
 				8D503B681BA059AD00C84F58 /* AppError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

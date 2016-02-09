@@ -3,7 +3,7 @@
 //  App
 //
 //  Created by Mélanie Bonnet on 09/09/2015.
-//  Copyright © 2015 Cédric Eugeni. All rights reserved.
+//  Copyright © 2015 3IE. All rights reserved.
 //
 
 import Foundation

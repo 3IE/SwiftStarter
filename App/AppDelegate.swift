@@ -3,11 +3,14 @@
 //  App
 //
 //  Created by Cédric Eugeni on 29/05/2015.
-//  Copyright (c) 2015 Cédric Eugeni. All rights reserved.
+//  Copyright (c) 2015 3IE. All rights reserved.
 //
 
 import UIKit
 import ObjectMapper
+
+import Alamofire
+import AlamofireObjectMapper
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
+		testalamo()
 		return true
+	}
+	
+	func testalamo() {
+		let URL = "https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%2Clocation%2Cunits%20from%20weather.forecast%20where%20woeid%3D615702%20and%20u%3D'c'&format=json"
+		
+		Alamofire.request(.GET, URL).responseObject() { (response: Response<QueryResponse, NSError>) in
+			let weatherResponse = response.result.value
+			print(weatherResponse?.town)
+		}
 	}
 	
 	func applicationWillResignActive(application: UIApplication) {
