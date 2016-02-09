@@ -11,20 +11,14 @@
 		172F50461C68E6D0000A9D78 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172F50441C68E6D0000A9D78 /* ObjectMapper.framework */; };
 		177691BC1C10C13E00A3D08A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691B91C10C13E00A3D08A /* Alamofire.framework */; };
 		177691BD1C10C13E00A3D08A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BA1C10C13E00A3D08A /* AlamofireImage.framework */; };
-		177691BE1C10C13E00A3D08A /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BB1C10C13E00A3D08A /* Argo.framework */; };
-		177691C11C10C25500A3D08A /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691C01C10C25500A3D08A /* Curry.framework */; };
-		17E39DFD1C157FD100D3BFBC /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691C01C10C25500A3D08A /* Curry.framework */; };
 		17E39DFE1C157FD400D3BFBC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691B91C10C13E00A3D08A /* Alamofire.framework */; };
 		17E39DFF1C157FD700D3BFBC /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BA1C10C13E00A3D08A /* AlamofireImage.framework */; };
-		17E39E001C157FDA00D3BFBC /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BB1C10C13E00A3D08A /* Argo.framework */; };
 		17E39E011C157FEC00D3BFBC /* DataAccessMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B691BA0634500C84F58 /* DataAccessMain.swift */; };
 		17E39E021C157FFB00D3BFBC /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B671BA059AD00C84F58 /* AppError.swift */; };
 		8D503B681BA059AD00C84F58 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B671BA059AD00C84F58 /* AppError.swift */; };
 		8D503B6A1BA0634500C84F58 /* DataAccessMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B691BA0634500C84F58 /* DataAccessMain.swift */; };
 		A765CDE41B219606004CD54A /* UIColor+Hexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE31B219606004CD54A /* UIColor+Hexa.swift */; };
 		A765CDE51B219606004CD54A /* UIColor+Hexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE31B219606004CD54A /* UIColor+Hexa.swift */; };
-		A765CDE71B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */; };
-		A765CDE81B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */; };
 		A765CDF31B25DDF8004CD54A /* NSURLRequest+Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF21B25DDF8004CD54A /* NSURLRequest+Body.swift */; };
 		A765CDF41B25DDF8004CD54A /* NSURLRequest+Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF21B25DDF8004CD54A /* NSURLRequest+Body.swift */; };
 		A765CDF61B25E191004CD54A /* NSBundle+Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF51B25E191004CD54A /* NSBundle+Root.swift */; };
@@ -64,8 +58,6 @@
 		172F50441C68E6D0000A9D78 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		177691B91C10C13E00A3D08A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		177691BA1C10C13E00A3D08A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
-		177691BB1C10C13E00A3D08A /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
-		177691C01C10C25500A3D08A /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
 		8D503B671BA059AD00C84F58 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppError.swift; path = App/AppError.swift; sourceTree = "<group>"; };
 		8D503B691BA0634500C84F58 /* DataAccessMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataAccessMain.swift; path = App/DataAccessMain.swift; sourceTree = "<group>"; };
 		A765CDE31B219606004CD54A /* UIColor+Hexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Hexa.swift"; path = "App/UIColor+Hexa.swift"; sourceTree = "<group>"; };
@@ -92,8 +84,6 @@
 				172F50461C68E6D0000A9D78 /* ObjectMapper.framework in Frameworks */,
 				177691BC1C10C13E00A3D08A /* Alamofire.framework in Frameworks */,
 				177691BD1C10C13E00A3D08A /* AlamofireImage.framework in Frameworks */,
-				177691BE1C10C13E00A3D08A /* Argo.framework in Frameworks */,
-				177691C11C10C25500A3D08A /* Curry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,9 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17E39DFF1C157FD700D3BFBC /* AlamofireImage.framework in Frameworks */,
-				17E39DFD1C157FD100D3BFBC /* Curry.framework in Frameworks */,
 				17E39DFE1C157FD400D3BFBC /* Alamofire.framework in Frameworks */,
-				17E39E001C157FDA00D3BFBC /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,10 +102,10 @@
 		17965D531C561B030013D390 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				177691C01C10C25500A3D08A /* Curry.framework */,
+				172F50431C68E6D0000A9D78 /* AlamofireObjectMapper.framework */,
+				172F50441C68E6D0000A9D78 /* ObjectMapper.framework */,
 				177691B91C10C13E00A3D08A /* Alamofire.framework */,
 				177691BA1C10C13E00A3D08A /* AlamofireImage.framework */,
-				177691BB1C10C13E00A3D08A /* Argo.framework */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -199,8 +187,6 @@
 		A79825391B18A71000F8E795 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				172F50431C68E6D0000A9D78 /* AlamofireObjectMapper.framework */,
-				172F50441C68E6D0000A9D78 /* ObjectMapper.framework */,
 				17965D541C561B0C0013D390 /* Internal */,
 				17965D531C561B030013D390 /* External */,
 			);
@@ -381,8 +367,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Curry.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireObjectMapper.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 			);
@@ -403,7 +387,6 @@
 				A765CDF31B25DDF8004CD54A /* NSURLRequest+Body.swift in Sources */,
 				A765CDF61B25E191004CD54A /* NSBundle+Root.swift in Sources */,
 				A79825191B18A6FC00F8E795 /* AppDelegate.swift in Sources */,
-				A765CDE71B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */,
 				A765CDE41B219606004CD54A /* UIColor+Hexa.swift in Sources */,
 				8D503B681BA059AD00C84F58 /* AppError.swift in Sources */,
 			);
@@ -416,7 +399,6 @@
 				A765CDF41B25DDF8004CD54A /* NSURLRequest+Body.swift in Sources */,
 				A765CDF71B25E191004CD54A /* NSBundle+Root.swift in Sources */,
 				A798252F1B18A6FC00F8E795 /* AppTests.swift in Sources */,
-				A765CDE81B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */,
 				17E39E011C157FEC00D3BFBC /* DataAccessMain.swift in Sources */,
 				A765CDE51B219606004CD54A /* UIColor+Hexa.swift in Sources */,
 				17E39E021C157FFB00D3BFBC /* AppError.swift in Sources */,

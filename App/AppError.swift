@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import Argo
-import Curry
+import ObjectMapper
 
 public enum AppError: ErrorType {
     case NoResponse(String)
@@ -29,23 +28,29 @@ public enum AppError: ErrorType {
     var message: String {
         switch self {
         case .TypeMismatch(let expected, let actual):
-            return "[ARGO] app Type Mismatch : expected " + expected + ", actual " + actual
+            return "[parsing] app Type Mismatch : expected " + expected + ", actual " + actual
         case .MissingKey(let message):
-            return "[ARGO] app missing key : " + message
+            return "[parsing] app missing key : " + message
         case .Server(_, let message):
             return getDomain() + message
         default:
-            return "[ARGO] app : "
+            return "[parsing] app : "
         }
     }
 }
 
-extension AppError : Decodable {
-    public static func decode(j: JSON) -> Decoded<AppError> {
-        return curry(AppError.Server)
-            <^> j <| "code"
-            <*> j <| "message"
-    }
+extension AppError : Mappable {
+	public init?(_ map: Map) {
+		self = .Server(0, "msg")
+	}
+	
+	public mutating func mapping(map: Map) {
+		var parsedMessage : String = ""
+		var parsedCode : Int = 0
+		parsedMessage <- map["message"]
+		parsedCode <- map["code"]
+		self = .Server(parsedCode, parsedMessage)
+	}
 }
 
 //MARK: - Helpers
