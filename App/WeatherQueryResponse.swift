@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-struct QueryResponse {
+struct WeatherQueryResponse {
 	var count: Int?
 	var date: NSDate?
 	var language: String?
@@ -17,7 +17,7 @@ struct QueryResponse {
 	var town: String?
 }
 
-extension QueryResponse : Mappable {
+extension WeatherQueryResponse : Mappable {
 	init?(_ map: Map) {
 	}
 	

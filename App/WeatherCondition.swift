@@ -9,19 +9,19 @@
 import Foundation
 import ObjectMapper
 
-struct WeatherCondition{
+struct WeatherCondition {
 	var code: Int?
 	var temperature: Int?
 	var description: String?
 }
 
-extension WeatherCondition : Mappable {
+extension WeatherCondition: Mappable {
 	init?(_ map: Map) {
 	}
 	
 	mutating func mapping(map: Map) {
-		code <- (map["code"],IntTransform())
-		temperature <- (map["temp"],IntTransform())
+		code <- (map["code"], IntTransform())
+		temperature <- (map["temp"], IntTransform())
 		description <- map["text"]
 	}
 }
