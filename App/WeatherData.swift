@@ -10,43 +10,45 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 
-enum TownWithWoeid: String {
-	case Paris = "615702"
-	case KremlinBicetre = "55863504"
+//MARK: Router class
+private enum Router {
+	case CurrentWeather(TownWithWoeid)
 }
 
-class WeatherData {
+//MARK: RouterProtocol
+extension Router: RouterProtocol {
 	
-	
-	private enum Router: URLRequestConvertible {
-		case CurrentWeather(TownWithWoeid)
-		
-		var method: Alamofire.Method {
-			switch self {
-			case .CurrentWeather:
-				return .GET
-			}
-		}
-		
-		var path: String {
-			switch self {
-			case .CurrentWeather(let town):
-				return "/v1/public/yql?q=select%20item.condition%2Clocation%2Cunits%20from%20weather.forecast%20where%20woeid%3D\(town.rawValue)%20and%20u%20%3D%20'c'&format=json"
-			}
-		}
-		
-		var URLRequest: NSMutableURLRequest {
-			let mutableURLRequest = NSMutableURLRequest(apiPathRelativeToBase: path, method: method)!
-			
-			switch self {
-//			case .RequestWithParameters(let body):
-//				return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: body).0
-			default:
-				return mutableURLRequest
-			}
+	var method: Alamofire.Method {
+		switch self {
+		case .CurrentWeather:
+			return .GET
 		}
 	}
+	
+	var path: String {
+		switch self {
+		case .CurrentWeather(let town):
+			return "/v1/public/yql?q=select%20item.condition%2Clocation%2Cunits%20from%20weather.forecast%20where%20woeid%3D\(town.rawValue)%20and%20u%20%3D%20'c'&format=json"
+		}
+	}
+}
 
+//MARK: URLRequestConvertible
+extension Router: URLRequestConvertible {
+	var URLRequest: NSMutableURLRequest {
+		let mutableURLRequest = NSMutableURLRequest(apiPathRelativeToBase: path, method: method)!
+		
+		switch self {
+			//			case .RequestWithParameters(let body):
+		//				return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: body).0
+		default:
+			return mutableURLRequest
+		}
+	}
+}
+
+//MARK: - WeatherData
+class WeatherData {
 	/**
 	Fetch the current weather
 	
@@ -61,6 +63,6 @@ class WeatherData {
 				let queryResponse: QueryResponse? = alamoResponse.result.value
 				completed(response: queryResponse, error: appError)
 		}
-
+		
 	}
 }
