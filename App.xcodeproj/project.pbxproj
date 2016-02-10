@@ -7,24 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172F06821C6B2C3600B711B2 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F06811C6B2C3600B711B2 /* WeatherVC.swift */; };
+		172F06831C6B2C3600B711B2 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F06811C6B2C3600B711B2 /* WeatherVC.swift */; };
+		172F06851C6B2C5F00B711B2 /* IntTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F06841C6B2C5F00B711B2 /* IntTransform.swift */; };
+		172F06861C6B2C5F00B711B2 /* IntTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F06841C6B2C5F00B711B2 /* IntTransform.swift */; };
+		172F06881C6B2C6F00B711B2 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F06871C6B2C6F00B711B2 /* WeatherData.swift */; };
+		172F06891C6B2C6F00B711B2 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F06871C6B2C6F00B711B2 /* WeatherData.swift */; };
+		172F068B1C6B2C7400B711B2 /* WeatherBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F068A1C6B2C7400B711B2 /* WeatherBusiness.swift */; };
+		172F068C1C6B2C7400B711B2 /* WeatherBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F068A1C6B2C7400B711B2 /* WeatherBusiness.swift */; };
+		172F068E1C6B2C8A00B711B2 /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F068D1C6B2C8A00B711B2 /* WeatherCondition.swift */; };
+		172F068F1C6B2C8A00B711B2 /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F068D1C6B2C8A00B711B2 /* WeatherCondition.swift */; };
+		172F06911C6B36C700B711B2 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172F06901C6B36C700B711B2 /* SVProgressHUD.framework */; };
+		172F50451C68E6D0000A9D78 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172F50431C68E6D0000A9D78 /* AlamofireObjectMapper.framework */; };
+		172F50461C68E6D0000A9D78 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172F50441C68E6D0000A9D78 /* ObjectMapper.framework */; };
+		172FE3431C69F0FA00496519 /* QueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172FE3421C69F0FA00496519 /* QueryResponse.swift */; };
+		173B57DF1C6B45FE00FEB036 /* NSURLRequest+Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF21B25DDF8004CD54A /* NSURLRequest+Body.swift */; };
+		173B57E01C6B45FF00FEB036 /* NSURLRequest+Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF21B25DDF8004CD54A /* NSURLRequest+Body.swift */; };
 		177691BC1C10C13E00A3D08A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691B91C10C13E00A3D08A /* Alamofire.framework */; };
 		177691BD1C10C13E00A3D08A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BA1C10C13E00A3D08A /* AlamofireImage.framework */; };
-		177691BE1C10C13E00A3D08A /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BB1C10C13E00A3D08A /* Argo.framework */; };
-		177691C11C10C25500A3D08A /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691C01C10C25500A3D08A /* Curry.framework */; };
-		17E39DFD1C157FD100D3BFBC /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691C01C10C25500A3D08A /* Curry.framework */; };
 		17E39DFE1C157FD400D3BFBC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691B91C10C13E00A3D08A /* Alamofire.framework */; };
 		17E39DFF1C157FD700D3BFBC /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BA1C10C13E00A3D08A /* AlamofireImage.framework */; };
-		17E39E001C157FDA00D3BFBC /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BB1C10C13E00A3D08A /* Argo.framework */; };
-		17E39E011C157FEC00D3BFBC /* DataAccessMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B691BA0634500C84F58 /* DataAccessMain.swift */; };
 		17E39E021C157FFB00D3BFBC /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B671BA059AD00C84F58 /* AppError.swift */; };
+		17E48EB51C6A2F8B00D0B0B0 /* QueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172FE3421C69F0FA00496519 /* QueryResponse.swift */; };
 		8D503B681BA059AD00C84F58 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B671BA059AD00C84F58 /* AppError.swift */; };
-		8D503B6A1BA0634500C84F58 /* DataAccessMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B691BA0634500C84F58 /* DataAccessMain.swift */; };
 		A765CDE41B219606004CD54A /* UIColor+Hexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE31B219606004CD54A /* UIColor+Hexa.swift */; };
 		A765CDE51B219606004CD54A /* UIColor+Hexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE31B219606004CD54A /* UIColor+Hexa.swift */; };
-		A765CDE71B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */; };
-		A765CDE81B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */; };
-		A765CDF31B25DDF8004CD54A /* NSURLRequest+Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF21B25DDF8004CD54A /* NSURLRequest+Body.swift */; };
-		A765CDF41B25DDF8004CD54A /* NSURLRequest+Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF21B25DDF8004CD54A /* NSURLRequest+Body.swift */; };
 		A765CDF61B25E191004CD54A /* NSBundle+Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF51B25E191004CD54A /* NSBundle+Root.swift */; };
 		A765CDF71B25E191004CD54A /* NSBundle+Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF51B25E191004CD54A /* NSBundle+Root.swift */; };
 		A79825191B18A6FC00F8E795 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79825181B18A6FC00F8E795 /* AppDelegate.swift */; };
@@ -58,14 +65,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		172F06811C6B2C3600B711B2 /* WeatherVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherVC.swift; path = App/WeatherVC.swift; sourceTree = "<group>"; };
+		172F06841C6B2C5F00B711B2 /* IntTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntTransform.swift; path = App/IntTransform.swift; sourceTree = "<group>"; };
+		172F06871C6B2C6F00B711B2 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherData.swift; path = App/WeatherData.swift; sourceTree = "<group>"; };
+		172F068A1C6B2C7400B711B2 /* WeatherBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherBusiness.swift; path = App/WeatherBusiness.swift; sourceTree = "<group>"; };
+		172F068D1C6B2C8A00B711B2 /* WeatherCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherCondition.swift; path = App/WeatherCondition.swift; sourceTree = "<group>"; };
+		172F06901C6B36C700B711B2 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		172F50431C68E6D0000A9D78 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
+		172F50441C68E6D0000A9D78 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		172FE3421C69F0FA00496519 /* QueryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryResponse.swift; path = App/QueryResponse.swift; sourceTree = "<group>"; };
 		177691B91C10C13E00A3D08A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		177691BA1C10C13E00A3D08A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
-		177691BB1C10C13E00A3D08A /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
-		177691C01C10C25500A3D08A /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
 		8D503B671BA059AD00C84F58 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppError.swift; path = App/AppError.swift; sourceTree = "<group>"; };
-		8D503B691BA0634500C84F58 /* DataAccessMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataAccessMain.swift; path = App/DataAccessMain.swift; sourceTree = "<group>"; };
 		A765CDE31B219606004CD54A /* UIColor+Hexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Hexa.swift"; path = "App/UIColor+Hexa.swift"; sourceTree = "<group>"; };
-		A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AlamofireRequest+Argo.swift"; path = "App/AlamofireRequest+Argo.swift"; sourceTree = "<group>"; };
 		A765CDF21B25DDF8004CD54A /* NSURLRequest+Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURLRequest+Body.swift"; path = "App/NSURLRequest+Body.swift"; sourceTree = "<group>"; };
 		A765CDF51B25E191004CD54A /* NSBundle+Root.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSBundle+Root.swift"; path = "App/NSBundle+Root.swift"; sourceTree = "<group>"; };
 		A79825131B18A6FC00F8E795 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,10 +96,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172F50451C68E6D0000A9D78 /* AlamofireObjectMapper.framework in Frameworks */,
+				172F50461C68E6D0000A9D78 /* ObjectMapper.framework in Frameworks */,
 				177691BC1C10C13E00A3D08A /* Alamofire.framework in Frameworks */,
 				177691BD1C10C13E00A3D08A /* AlamofireImage.framework in Frameworks */,
-				177691BE1C10C13E00A3D08A /* Argo.framework in Frameworks */,
-				177691C11C10C25500A3D08A /* Curry.framework in Frameworks */,
+				172F06911C6B36C700B711B2 /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,9 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17E39DFF1C157FD700D3BFBC /* AlamofireImage.framework in Frameworks */,
-				17E39DFD1C157FD100D3BFBC /* Curry.framework in Frameworks */,
 				17E39DFE1C157FD400D3BFBC /* Alamofire.framework in Frameworks */,
-				17E39E001C157FDA00D3BFBC /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,10 +119,11 @@
 		17965D531C561B030013D390 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				177691C01C10C25500A3D08A /* Curry.framework */,
+				172F06901C6B36C700B711B2 /* SVProgressHUD.framework */,
+				172F50431C68E6D0000A9D78 /* AlamofireObjectMapper.framework */,
+				172F50441C68E6D0000A9D78 /* ObjectMapper.framework */,
 				177691B91C10C13E00A3D08A /* Alamofire.framework */,
 				177691BA1C10C13E00A3D08A /* AlamofireImage.framework */,
-				177691BB1C10C13E00A3D08A /* Argo.framework */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -121,6 +133,14 @@
 			children = (
 			);
 			name = Internal;
+			sourceTree = "<group>";
+		};
+		17E48EAE1C6A2B2200D0B0B0 /* ObjectMapperTransform */ = {
+			isa = PBXGroup;
+			children = (
+				172F06841C6B2C5F00B711B2 /* IntTransform.swift */,
+			);
+			name = ObjectMapperTransform;
 			sourceTree = "<group>";
 		};
 		A798250A1B18A6FC00F8E795 = {
@@ -202,6 +222,7 @@
 		A798253B1B18A74200F8E795 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				172F06811C6B2C3600B711B2 /* WeatherVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -222,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				8D503B671BA059AD00C84F58 /* AppError.swift */,
+				172FE3421C69F0FA00496519 /* QueryResponse.swift */,
+				172F068D1C6B2C8A00B711B2 /* WeatherCondition.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -229,6 +252,7 @@
 		A798253E1B18A75F00F8E795 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				172F068A1C6B2C7400B711B2 /* WeatherBusiness.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -236,8 +260,8 @@
 		A798253F1B18A76900F8E795 /* DataAccess */ = {
 			isa = PBXGroup;
 			children = (
-				A765CDE61B219909004CD54A /* AlamofireRequest+Argo.swift */,
-				8D503B691BA0634500C84F58 /* DataAccessMain.swift */,
+				17E48EAE1C6A2B2200D0B0B0 /* ObjectMapperTransform */,
+				172F06871C6B2C6F00B711B2 /* WeatherData.swift */,
 			);
 			name = DataAccess;
 			sourceTree = "<group>";
@@ -314,7 +338,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = "Cédric Eugeni";
+				ORGANIZATIONNAME = 3IE;
 				TargetAttributes = {
 					A79825121B18A6FC00F8E795 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -373,8 +397,9 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Curry.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
 			outputPaths = (
 			);
@@ -389,13 +414,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D503B6A1BA0634500C84F58 /* DataAccessMain.swift in Sources */,
-				A765CDF31B25DDF8004CD54A /* NSURLRequest+Body.swift in Sources */,
+				172F06821C6B2C3600B711B2 /* WeatherVC.swift in Sources */,
+				172FE3431C69F0FA00496519 /* QueryResponse.swift in Sources */,
 				A765CDF61B25E191004CD54A /* NSBundle+Root.swift in Sources */,
+				172F06881C6B2C6F00B711B2 /* WeatherData.swift in Sources */,
 				A79825191B18A6FC00F8E795 /* AppDelegate.swift in Sources */,
-				A765CDE71B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */,
 				A765CDE41B219606004CD54A /* UIColor+Hexa.swift in Sources */,
+				172F068B1C6B2C7400B711B2 /* WeatherBusiness.swift in Sources */,
+				173B57DF1C6B45FE00FEB036 /* NSURLRequest+Body.swift in Sources */,
+				172F06851C6B2C5F00B711B2 /* IntTransform.swift in Sources */,
 				8D503B681BA059AD00C84F58 /* AppError.swift in Sources */,
+				172F068E1C6B2C8A00B711B2 /* WeatherCondition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,13 +432,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A765CDF41B25DDF8004CD54A /* NSURLRequest+Body.swift in Sources */,
 				A765CDF71B25E191004CD54A /* NSBundle+Root.swift in Sources */,
 				A798252F1B18A6FC00F8E795 /* AppTests.swift in Sources */,
-				A765CDE81B219909004CD54A /* AlamofireRequest+Argo.swift in Sources */,
-				17E39E011C157FEC00D3BFBC /* DataAccessMain.swift in Sources */,
+				17E48EB51C6A2F8B00D0B0B0 /* QueryResponse.swift in Sources */,
+				172F06891C6B2C6F00B711B2 /* WeatherData.swift in Sources */,
 				A765CDE51B219606004CD54A /* UIColor+Hexa.swift in Sources */,
+				172F068C1C6B2C7400B711B2 /* WeatherBusiness.swift in Sources */,
 				17E39E021C157FFB00D3BFBC /* AppError.swift in Sources */,
+				173B57E01C6B45FF00FEB036 /* NSURLRequest+Body.swift in Sources */,
+				172F06831C6B2C3600B711B2 /* WeatherVC.swift in Sources */,
+				172F06861C6B2C5F00B711B2 /* IntTransform.swift in Sources */,
+				172F068F1C6B2C8A00B711B2 /* WeatherCondition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +482,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -500,6 +537,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
