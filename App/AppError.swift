@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-public enum AppError: ErrorType {
+enum AppError: ErrorType {
     case NoResponse(String)
     case Parsing(String)
     case TypeMismatch(String, String)
@@ -40,11 +40,11 @@ public enum AppError: ErrorType {
 }
 
 extension AppError : Mappable {
-	public init?(_ map: Map) {
+	init?(_ map: Map) {
 		self = .Server(0, "msg")
 	}
 	
-	public mutating func mapping(map: Map) {
+	mutating func mapping(map: Map) {
 		var parsedMessage : String = ""
 		var parsedCode : Int = 0
 		parsedMessage <- map["message"]

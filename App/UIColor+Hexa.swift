@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIColor {
+extension UIColor {
     public convenience init?(rgbValue: UInt) {
         self.init(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,

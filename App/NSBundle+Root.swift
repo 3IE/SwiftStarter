@@ -8,9 +8,9 @@
 
 import Foundation
 
-internal extension NSBundle {
-    internal static func getRootEndpoint() -> String {
-        return NSBundle.mainBundle().objectForInfoDictionaryKey("kRootEndpoint") as? String ?? ""
+extension NSBundle {
+	static var apiBaseUrl: String {
+        return NSBundle.mainBundle().objectForInfoDictionaryKey("kAPIBaseUrl") as? String ?? ""
     }
     
     //Add methods here in order to get the other endpoints

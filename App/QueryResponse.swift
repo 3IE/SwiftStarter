@@ -12,14 +12,13 @@ import ObjectMapper
 struct QueryResponse{
 	var count: Int?
 	var date: NSDate?
-	var language: NSString?
+	var language: String?
 	var weatherCondition: WeatherCondition?
-	var town: NSString?
+	var town: String?
 }
 
 extension QueryResponse : Mappable {
 	init?(_ map: Map) {
-		print("salut")
 	}
 	
 	mutating func mapping(map: Map) {

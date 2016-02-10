@@ -12,7 +12,7 @@ import ObjectMapper
 struct WeatherCondition{
 	var code: Int?
 	var temperature: Int?
-	var description: NSString?
+	var description: String?
 }
 
 extension WeatherCondition : Mappable {

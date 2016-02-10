@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-internal extension NSMutableURLRequest {
+extension NSMutableURLRequest {
     internal convenience init?(path: String, method: Alamofire.Method) {
         let URL = NSURL(string: NSBundle.getRootEndpoint())!
         self.init(URL: URL.URLByAppendingPathComponent(path))

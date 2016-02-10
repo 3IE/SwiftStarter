@@ -36,5 +36,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>kAPIBaseUrl</key>
+	<string>https://query.yahooapis.com</string>
 </dict>
 </plist>
