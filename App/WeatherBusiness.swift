@@ -11,7 +11,7 @@ import Foundation
 
 class WeatherBusiness {
 	
-	static func GetWeather(forTown town: TownWithWoeid, completed:((response:QueryResponse?, error: AppError?) -> Void)) -> Void {
+	static func GetWeather(forTown town: TownWithWoeid, completed:((response:WeatherQueryResponse?, error: AppError?) -> Void)) -> Void {
 		WeatherData.GetCurrentWeather(forTown: town) { (response, error) in
 			completed(response: response, error: error)
 		}

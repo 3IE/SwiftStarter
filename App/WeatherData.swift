@@ -55,12 +55,12 @@ class WeatherData {
 	- parameter town:      town to fetch the weather from
 	- parameter completed: completion block; error is nil is everthing goes right
 	*/
-	static func GetCurrentWeather(forTown town: TownWithWoeid, completed:((response:QueryResponse?, error: AppError?) -> Void)) -> Void {
+	static func GetCurrentWeather(forTown town: TownWithWoeid, completed:((response: WeatherQueryResponse?, error: AppError?) -> Void)) -> Void {
 		Alamofire.request(Router.CurrentWeather(town))
 			.validate()
-			.responseObject { (alamoResponse: Response<QueryResponse, NSError>) in
+			.responseObject { (alamoResponse: Response<WeatherQueryResponse, NSError>) in
 				let appError: AppError? = AppError(response: alamoResponse)
-				let queryResponse: QueryResponse? = alamoResponse.result.value
+				let queryResponse: WeatherQueryResponse? = alamoResponse.result.value
 				completed(response: queryResponse, error: appError)
 		}
 		

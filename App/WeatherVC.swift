@@ -10,14 +10,14 @@ import UIKit
 import SVProgressHUD
 
 class WeatherVC: UIViewController {
-
+	
 	@IBOutlet weak var temperatureLabelOutlet: UILabel!
 	@IBOutlet weak var descriptionLabelOutlet: UILabel!
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.Black)
-    }
+	}
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
@@ -35,5 +35,5 @@ class WeatherVC: UIViewController {
 			})
 		}
 	}
-
+	
 }
