@@ -1,5 +1,8 @@
 # StarterKit iOS
 
+Build : [![Build Status](https://travis-ci.org/3IE/SwiftStarter.svg?branch=develop)](https://travis-ci.org/3IE/SwiftStarter)
+
+
 This Starter Kit is a project which we use at 3IE everytime we have to begin a new iOS application development.
 The main goal of this project is to create an architecture which will be the same inside all our projects.
 The objective is also to gather some frameworks we always use in order to spare us some time.
@@ -30,9 +33,9 @@ The `utils` folder is the one that will contains some general classes with helpe
 
 The `Models` folder contains the description (classes) of the data we have to manipulate in our application to do the app business.
 
-#### Services
+#### DataAccess
 
-The `Services` folder contains files that will provide some services to our business. For example, calling a webservice is a service. But services are not necessarily webservices calls. Services may be calls to a CoreData database or call to get some data written in the phone memory.
+The `DataAccess` folder contains files that will provide some services to our business. For example, calling a webservice is a service. But services are not necessarily webservices calls. Services may be calls to a CoreData database or call to get some data written in the phone memory.
 
 #### Business
 
@@ -46,7 +49,7 @@ The `Controllers` folder contains all your controllers files (eg. UIViewControll
 
   - Swift
 
-  This `Swift` folder contains some classes describing special behavior for some components. It basicaly contains subclasses of UIView type (eg. UILabel, UIButton, UIView, UITableView ...). This folder is also handy to store IBDesignables and IBInspectables you create.
+  This `Swift` folder contains some classes describing special behavior for some components. It basically contains subclasses of UIView type (eg. UILabel, UIButton, UIView, UITableView ...). This folder is also handy to store IBDesignables and IBInspectables you create.
 
   - Xib
 
@@ -66,12 +69,29 @@ Compile time may be a bit longer the first time since it has to compile the exte
 
 In this starter kit, we provide several external frameworks that we use in our project and that helps this architecture be what it is.
 
-<a href="https://github.com/Alamofire/Alamofire.git">Alamofire</a> is an HTTP networking library written in Swift.
+- <a href="https://github.com/Alamofire/Alamofire">Alamofire</a> is an HTTP networking library written in Swift.
+- <a href="https://github.com/Alamofire/AlamofireImage">AlamofireImage</a> is an image component library for Alamofire.
+- <a href="https://github.com/Hearst-DD/ObjectMapper">ObjectMapper</a> is a JSON mapping library.
+- <a href="https://github.com/tristanhimmelman/AlamofireObjectMapper">AlamofireObjectMapper</a> is an Alamofire extension which simplifies ObjectMapper usage.
+- <a href="https://github.com/SVProgressHUD/SVProgressHUD">SVProgressHUD</a> is a lightweight progress HUD.
 
-<a href="https://github.com/Alamofire/AlamofireImage.git">AlamofireImage</a> is an image component library for Alamofire.
 
-<a href="https://github.com/thoughtbot/Argo.git">Argo</a> is a parsing library. It allows us to parse objects received from Alamofire to give it to the service.
+## Installing the external frameworks
 
-<a href="https://github.com/thoughtbot/Curry.git">Curry</a> is a currying component library for Argo.
+We use carthage, so you have to compile the frameworks from a terminal before compiling the project.
+Run this command to download and compile the frameworks referenced in the 'Cartfile.resolved' file.
+```shell
+$ carthage bootstrap --platform iOS
+```
 
-<a href="https://github.com/AliSoftware/OHHTTPStubs.git">OHHTTPStubs</a> is a library to stub your network requests. It is useful for unit testing purpose.
+To update to the latest version of the frameworks (referenced in the 'Cartfile') and regenerate 'Cartfile.resolved' file, run this command :
+```shell
+$ carthage update --platform iOS
+```
+
+## Documentation
+
+Use <a href="https://github.com/onevcat/VVDocumenter-Xcode">VVDocumenter-Xcode</a> to generate your methods documentation by simply typing '///' above them
+
+
+

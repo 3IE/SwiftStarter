@@ -1,0 +1,15 @@
+language: objective-c
+osx_image: xcode7.2
+xcode_project: App.xcodeproj
+xcode_scheme: App
+xcode_sdk: iphonesimulator9.2
+before_install:
+- curl -OlL "https://github.com/Carthage/Carthage/releases/download/0.13/Carthage.pkg"
+- sudo installer -pkg "Carthage.pkg" -target /
+- rm "Carthage.pkg"
+before_script:
+- carthage bootstrap --platform iOS
+notifications:
+  email:
+    on_success: change
+    on_failure: always
