@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-struct QueryResponse{
+struct QueryResponse {
 	var count: Int?
 	var date: NSDate?
 	var language: String?

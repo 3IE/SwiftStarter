@@ -9,9 +9,15 @@
 import Foundation
 
 extension NSBundle {
+	
+	private static var _apiBaseUrl: String? = nil
+	
 	static var apiBaseUrl: String {
-        return NSBundle.mainBundle().objectForInfoDictionaryKey("kAPIBaseUrl") as? String ?? ""
-    }
-    
-    //Add methods here in order to get the other endpoints
+		if (_apiBaseUrl == nil) {
+			_apiBaseUrl = NSBundle.mainBundle().objectForInfoDictionaryKey("kAPIBaseUrl") as? String ?? ""
+		}
+		return _apiBaseUrl!
+	}
+	
+	//Add methods here in order to get the other endpoints
 }

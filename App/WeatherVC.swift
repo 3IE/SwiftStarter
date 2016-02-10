@@ -23,7 +23,6 @@ class WeatherVC: UIViewController {
 		super.viewWillAppear(animated)
 		SVProgressHUD.showWithStatus("Fetching in progress")
 		WeatherBusiness.GetWeather(forTown: TownWithWoeid.KremlinBicetre) { (response, error) in
-			print(response?.town)
 			dispatch_async(dispatch_get_main_queue(), {
 				if (error == nil) {
 					self.temperatureLabelOutlet.text = "\(response?.weatherCondition?.temperature ?? 0)"

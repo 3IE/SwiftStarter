@@ -69,15 +69,12 @@ Compile time may be a bit longer the first time since it has to compile the exte
 
 In this starter kit, we provide several external frameworks that we use in our project and that helps this architecture be what it is.
 
-<a href="https://github.com/Alamofire/Alamofire.git">Alamofire</a> is an HTTP networking library written in Swift.
+- <a href="https://github.com/Alamofire/Alamofire">Alamofire</a> is an HTTP networking library written in Swift.
+- <a href="https://github.com/Alamofire/AlamofireImage">AlamofireImage</a> is an image component library for Alamofire.
+- <a href="https://github.com/Hearst-DD/ObjectMapper">ObjectMapper</a> is a JSON mapping library.
+- <a href="https://github.com/tristanhimmelman/AlamofireObjectMapper">AlamofireObjectMapper</a> is an Alamofire extension which simplifies ObjectMapper usage.
+- <a href="https://github.com/SVProgressHUD/SVProgressHUD">SVProgressHUD</a> is a lightweight progress HUD.
 
-<a href="https://github.com/Alamofire/AlamofireImage.git">AlamofireImage</a> is an image component library for Alamofire.
-
-<a href="https://github.com/thoughtbot/Argo.git">Argo</a> is a parsing library. It allows us to parse objects received from Alamofire to give it to the service.
-
-<a href="https://github.com/thoughtbot/Curry.git">Curry</a> is a currying component library for Argo.
-
-<a href="https://github.com/AliSoftware/OHHTTPStubs.git">OHHTTPStubs</a> is a library to stub your network requests. It is useful for unit testing purpose.
 
 ## Installing the external frameworks
 
@@ -91,3 +88,10 @@ To update to the latest version of the frameworks (referenced in the 'Cartfile')
 ```shell
 $ carthage update --platform iOS
 ```
+
+## Documentation
+
+Use <a href="https://github.com/onevcat/VVDocumenter-Xcode">VVDocumenter-Xcode</a> to generate your methods documentation by simply typing '///' above them
+
+
+

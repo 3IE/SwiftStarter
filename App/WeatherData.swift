@@ -15,7 +15,8 @@ enum TownWithWoeid: String {
 	case KremlinBicetre = "55863504"
 }
 
-class WeatherData: DataAccessMain {
+class WeatherData {
+	
 	
 	private enum Router: URLRequestConvertible {
 		case CurrentWeather(TownWithWoeid)
@@ -35,7 +36,7 @@ class WeatherData: DataAccessMain {
 		}
 		
 		var URLRequest: NSMutableURLRequest {
-			let mutableURLRequest = DataAccessMain.initUrlRequestWithPath(path, method: method)
+			let mutableURLRequest = NSMutableURLRequest(apiPathRelativeToBase: path, method: method)!
 			
 			switch self {
 //			case .RequestWithParameters(let body):
@@ -46,16 +47,22 @@ class WeatherData: DataAccessMain {
 		}
 	}
 
+	/**
+	Fetch the current weather
+	
+	- parameter town:      town to fetch the weather from
+	- parameter completed: completion block; error is nil is everthing goes right
+	*/
 	static func GetCurrentWeather(forTown town: TownWithWoeid, completed:((response:QueryResponse?, error: AppError?) -> Void)) -> Void {
 		Alamofire.request(Router.CurrentWeather(town))
 			.validate()
-			.responseObject { (response: Response<QueryResponse, NSError>) in
+			.responseObject { (alamoResponse: Response<QueryResponse, NSError>) in
 				let appError: AppError?
-				let queryResponse: QueryResponse? = response.result.value
-				if (response.response == nil) {
+				let queryResponse: QueryResponse? = alamoResponse.result.value
+				if (alamoResponse.response == nil) {
 					appError = AppError.NoResponse("No Response")
 				}
-				else if (response.result.isFailure || response.result.value == nil) {
+				else if (alamoResponse.result.isFailure || alamoResponse.result.value == nil) {
 					appError = AppError.Parsing("Parsing failure")
 				}
 				else {
