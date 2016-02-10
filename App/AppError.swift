@@ -8,12 +8,18 @@
 
 import Foundation
 import ObjectMapper
+import Alamofire
 
+/**
+The various kind of app errors
+
+- NoResponse: the server did not respond
+- Parsing:    the server responded but the response could not be parsed
+- Server:     the server responded a custom error message
+*/
 enum AppError: ErrorType {
     case NoResponse(String)
     case Parsing(String)
-    case TypeMismatch(String, String)
-    case MissingKey(String)
     case Server(Int, String)
     
     var code: Int {
@@ -27,10 +33,6 @@ enum AppError: ErrorType {
     
     var message: String {
         switch self {
-        case .TypeMismatch(let expected, let actual):
-            return "[parsing] app Type Mismatch : expected " + expected + ", actual " + actual
-        case .MissingKey(let message):
-            return "[parsing] app missing key : " + message
         case .Server(_, let message):
             return getDomain() + message
         default:
@@ -38,6 +40,25 @@ enum AppError: ErrorType {
         }
     }
 }
+
+//MARK: - AlamoFire
+
+extension AppError {
+	init?<T>(response: Alamofire.Response<T, NSError>) {
+		if (response.response == nil) {
+			self = .NoResponse("No Response")
+		}
+		else if (response.result.isFailure || response.result.value == nil) {
+			self = .Parsing("Parsing failure")
+		}
+		else {
+			return nil
+		}
+	}
+}
+
+
+//MARK: - ObjectMapper
 
 extension AppError : Mappable {
 	init?(_ map: Map) {

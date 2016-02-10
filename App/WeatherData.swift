@@ -57,17 +57,8 @@ class WeatherData {
 		Alamofire.request(Router.CurrentWeather(town))
 			.validate()
 			.responseObject { (alamoResponse: Response<QueryResponse, NSError>) in
-				let appError: AppError?
+				let appError: AppError? = AppError(response: alamoResponse)
 				let queryResponse: QueryResponse? = alamoResponse.result.value
-				if (alamoResponse.response == nil) {
-					appError = AppError.NoResponse("No Response")
-				}
-				else if (alamoResponse.result.isFailure || alamoResponse.result.value == nil) {
-					appError = AppError.Parsing("Parsing failure")
-				}
-				else {
-					appError = nil
-				}
 				completed(response: queryResponse, error: appError)
 		}
 
