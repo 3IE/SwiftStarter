@@ -9,15 +9,16 @@
 import Foundation
 import ObjectMapper
 
-struct WeatherQueryResponse {
+struct CurrentWeatherResponse {
 	var count: Int?
+	var town: String?
 	var date: NSDate?
 	var language: String?
 	var weatherCondition: WeatherCondition?
-	var town: String?
+	
 }
 
-extension WeatherQueryResponse : Mappable {
+extension CurrentWeatherResponse: Mappable {
 	init?(_ map: Map) {
 	}
 	
