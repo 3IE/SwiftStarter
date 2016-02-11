@@ -1,4 +1,3 @@
-
 //
 //  WeatherBusiness.swift
 //  App
@@ -11,8 +10,14 @@ import Foundation
 
 class WeatherBusiness {
 	
-	static func GetWeather(forTown town: TownWithWoeid, completed:((response:WeatherQueryResponse?, error: AppError?) -> Void)) -> Void {
+	static func GetWeather(forTown town: TownWithWoeid, completed:((response:CurrentWeatherResponse?, error: AppError?) -> Void)) -> Void {
 		WeatherData.GetCurrentWeather(forTown: town) { (response, error) in
+			completed(response: response, error: error)
+		}
+	}
+	
+	static func GetForecast(forTown town: TownWithWoeid, completed:((response:ForecastResponse?, error: AppError?) -> Void)) -> Void {
+		WeatherData.GetForecast(forTown: town) { (response, error) in
 			completed(response: response, error: error)
 		}
 	}

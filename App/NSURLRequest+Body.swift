@@ -10,21 +10,41 @@ import Foundation
 import Alamofire
 
 extension NSMutableURLRequest {
+
+	private convenience init(fullUrl :NSURL, method: Alamofire.Method) {
+		self.init(URL: fullUrl)
+		self.HTTPMethod = method.rawValue
+		//Add here some other settings for your request
+	}
 	
 	/**
 	Create a new request based on the API base path
 	
-	- parameter apiPathRelativeToBase: this path (that needs to be escaped) is added to the apiBaseUrl
+	- parameter apiPathRelativeToBase: relative path (that needs to be escaped) added to the apiBaseUrl
 	- parameter method:                HTTP verb (get, post, delete, ...)
 	
 	- returns: a new request based on the API base path
 	*/
 	convenience init?(apiPathRelativeToBase path: String, method: Alamofire.Method) {
-		let baseUrl = NSURL(string: NSBundle.apiBaseUrl)!
-		let fullUrl = NSURL(string: path, relativeToURL: baseUrl)!
-		self.init(URL: fullUrl)
-		self.HTTPMethod = method.rawValue
-		//Add here some other settings for your request
+		guard let baseUrl = NSURL(string: NSBundle.apiBaseUrl), let fullUrl = NSURL(string: path, relativeToURL: baseUrl) else {
+			return nil
+		}
+		self.init(fullUrl: fullUrl, method: method)
+	}
+	
+	/**
+	Create a new request
+	
+	- parameter apiPathAbsolute: absolute path (that needs to be escaped)
+	- parameter method:          HTTP verb (get, post, delete, ...)
+	
+	- returns:
+	*/
+	convenience init?(apiPathAbsolute path: String, method: Alamofire.Method) {
+		guard let fullUrl = NSURL(string: path) else {
+			return nil
+		}
+		self.init(fullUrl: fullUrl, method: method)
 	}
 	
 }

@@ -15,6 +15,7 @@ struct WeatherCondition {
 	var description: String?
 }
 
+//MARK: ObjectMapper
 extension WeatherCondition: Mappable {
 	init?(_ map: Map) {
 	}
