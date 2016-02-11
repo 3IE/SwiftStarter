@@ -1,4 +1,3 @@
-
 //
 //  WeatherBusiness.swift
 //  App

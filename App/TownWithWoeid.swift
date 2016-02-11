@@ -23,6 +23,7 @@ enum TownWithWoeid: TownWithWoeidProtocol {
 		case .KremlinBicetre : return "Le Kremlin Bicetre"
 		}
 	}
+	
 	var woeid: String {
 		switch  self {
 		case .Paris: return "615702"

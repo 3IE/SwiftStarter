@@ -8,7 +8,7 @@
         <!--MailGun-->
         <scene sceneID="AId-Ld-LJa">
             <objects>
-                <viewController id="QFK-Nz-5l3" customClass="MailGunVC" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QFK-Nz-5l3" customClass="MailgunVC" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jiD-FT-ab1"/>
                         <viewControllerLayoutGuide type="bottom" id="ct1-LB-RnP"/>
@@ -16,9 +16,109 @@
                     <view key="view" contentMode="scaleToFill" id="SFo-AE-hSR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2X-fv-V2i">
+                                <rect key="frame" x="20" y="28" width="72" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="Czl-K3-S0l"/>
+                                    <constraint firstAttribute="height" constant="21" id="USj-vO-YyW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gmx-JO-uRy">
+                                <rect key="frame" x="20" y="144" width="62" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="San-SY-gn2"/>
+                                    <constraint firstAttribute="width" constant="62" id="jBY-uc-lRN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mail@provider.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQu-Vt-XSX">
+                                <rect key="frame" x="100" y="24" width="480" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="N9r-mh-WmW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QFK-Nz-5l3" id="gE9-1I-wKU"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello there" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MOL-bS-zaY">
+                                <rect key="frame" x="100" y="82" width="480" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1Mj-uA-rKK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QFK-Nz-5l3" id="GgD-Pm-MkX"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IE-D8-Zo9">
+                                <rect key="frame" x="20" y="86" width="59" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="1gL-Vb-I0g"/>
+                                    <constraint firstAttribute="width" constant="59" id="7gc-Wp-w8Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="How are you doing" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3lc-yc-vvS">
+                                <rect key="frame" x="100" y="140" width="480" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7ud-2A-iMD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QFK-Nz-5l3" id="LS5-v0-pph"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m18-Pv-0D3">
+                                <rect key="frame" x="257" y="195" width="87" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KtK-PM-yA0"/>
+                                    <constraint firstAttribute="width" constant="87" id="rT3-mR-p8r"/>
+                                </constraints>
+                                <state key="normal" title="Send email"/>
+                                <connections>
+                                    <action selector="sendEmailAction:" destination="QFK-Nz-5l3" eventType="touchUpInside" id="8SV-M8-2w3"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4IE-D8-Zo9" firstAttribute="top" secondItem="K2X-fv-V2i" secondAttribute="bottom" constant="37" id="Bw1-nb-2qy"/>
+                            <constraint firstItem="m18-Pv-0D3" firstAttribute="top" secondItem="3lc-yc-vvS" secondAttribute="bottom" constant="25" id="IFS-2h-5lL"/>
+                            <constraint firstItem="K2X-fv-V2i" firstAttribute="top" secondItem="jiD-FT-ab1" secondAttribute="bottom" constant="8" id="IT7-Qi-KSG"/>
+                            <constraint firstAttribute="trailing" secondItem="3lc-yc-vvS" secondAttribute="trailing" constant="20" id="JEb-2w-kQ2"/>
+                            <constraint firstItem="MOL-bS-zaY" firstAttribute="top" secondItem="GQu-Vt-XSX" secondAttribute="bottom" constant="28" id="NnT-uZ-VFm"/>
+                            <constraint firstItem="m18-Pv-0D3" firstAttribute="centerX" secondItem="SFo-AE-hSR" secondAttribute="centerX" id="TqW-tb-LKP"/>
+                            <constraint firstItem="Gmx-JO-uRy" firstAttribute="leading" secondItem="SFo-AE-hSR" secondAttribute="leading" constant="20" id="dYl-Dc-OqT"/>
+                            <constraint firstItem="4IE-D8-Zo9" firstAttribute="leading" secondItem="SFo-AE-hSR" secondAttribute="leading" constant="20" id="eVJ-8y-lJl"/>
+                            <constraint firstAttribute="trailing" secondItem="MOL-bS-zaY" secondAttribute="trailing" constant="20" id="ecR-Px-Gb3"/>
+                            <constraint firstItem="MOL-bS-zaY" firstAttribute="leading" secondItem="4IE-D8-Zo9" secondAttribute="trailing" constant="21" id="et1-Gy-d6d"/>
+                            <constraint firstItem="GQu-Vt-XSX" firstAttribute="top" secondItem="jiD-FT-ab1" secondAttribute="bottom" constant="4" id="fAE-j0-4Wn"/>
+                            <constraint firstItem="K2X-fv-V2i" firstAttribute="leading" secondItem="SFo-AE-hSR" secondAttribute="leading" constant="20" id="fNb-M3-U3S"/>
+                            <constraint firstItem="3lc-yc-vvS" firstAttribute="top" secondItem="MOL-bS-zaY" secondAttribute="bottom" constant="28" id="fNx-6u-F44"/>
+                            <constraint firstItem="GQu-Vt-XSX" firstAttribute="leading" secondItem="K2X-fv-V2i" secondAttribute="trailing" constant="8" id="heM-Rz-THC"/>
+                            <constraint firstItem="3lc-yc-vvS" firstAttribute="leading" secondItem="Gmx-JO-uRy" secondAttribute="trailing" constant="18" id="jE6-nk-EJA"/>
+                            <constraint firstItem="Gmx-JO-uRy" firstAttribute="top" secondItem="4IE-D8-Zo9" secondAttribute="bottom" constant="37" id="t8M-yt-zfZ"/>
+                            <constraint firstAttribute="trailing" secondItem="GQu-Vt-XSX" secondAttribute="trailing" constant="20" id="ziH-Vv-mKE"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="MailGun" id="ODK-jz-RlY"/>
+                    <connections>
+                        <outlet property="contentTextFieldOutlet" destination="3lc-yc-vvS" id="MjH-CF-zoO"/>
+                        <outlet property="recipientTextFieldOutlet" destination="GQu-Vt-XSX" id="x6V-pu-bBd"/>
+                        <outlet property="subjectTextFieldOutlet" destination="MOL-bS-zaY" id="rg3-dN-idb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcT-gN-zee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -3,9 +3,11 @@
 Build : [![Build Status](https://travis-ci.org/3IE/SwiftStarter.svg?branch=develop)](https://travis-ci.org/3IE/SwiftStarter)
 
 
-This Starter Kit is a project which we use at 3IE everytime we have to begin a new iOS application development.
-The main goal of this project is to create an architecture which will be the same inside all our projects.
+This Starter Kit is a project which we use at 3IE every time we have to begin a new iOS application development.
+The main goal of this project is to create an architecture which will be the same for all our projects.
 The objective is also to gather some frameworks we always use in order to spare us some time.
+
+The Starter has a few examples to show how to connect the various layers.  
 
 ## Architecture
 
@@ -91,7 +93,7 @@ $ carthage update --platform iOS
 
 ## Documentation
 
-Use <a href="https://github.com/onevcat/VVDocumenter-Xcode">VVDocumenter-Xcode</a> to generate your methods documentation by simply typing '///' above them
+Use <a href="https://github.com/onevcat/VVDocumenter-Xcode">VVDocumenter-Xcode</a> to generate your methods documentation by simply typing `///` above them
 
 
 

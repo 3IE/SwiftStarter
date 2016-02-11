@@ -41,11 +41,10 @@ extension Router: RouterProtocol {
 //MARK: URLRequestConvertible
 extension Router: URLRequestConvertible {
 	var URLRequest: NSMutableURLRequest {
-		let mutableURLRequest = NSMutableURLRequest(apiPathRelativeToBase: path, method: method)!
-		
+		guard let mutableURLRequest = NSMutableURLRequest(apiPathRelativeToBase: self.path, method: self.method) else {
+			return NSMutableURLRequest()
+		}		
 		switch self {
-			//			case .RequestWithParameters(let body):
-		//				return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: body).0
 		default:
 			return mutableURLRequest
 		}
@@ -65,9 +64,7 @@ class WeatherData {
 		Alamofire.request(Router.CurrentWeather(town))
 			.validate()
 			.responseObject { (alamoResponse: Response<CurrentWeatherResponse, NSError>) in
-				let appError = AppError(response: alamoResponse)
-				let queryResponse = alamoResponse.result.value
-				completed(response: queryResponse, error: appError)
+				completed(response: alamoResponse.result.value, error: AppError(response: alamoResponse))
 		}
 	}
 	
@@ -81,9 +78,7 @@ class WeatherData {
 		Alamofire.request(Router.Forecast(town))
 			.validate()
 			.responseObject { (alamoResponse: Response<ForecastResponse, NSError>) in
-				let appError = AppError(response: alamoResponse)
-				let queryResponse = alamoResponse.result.value
-				completed(response: queryResponse, error: appError)
+				completed(response: alamoResponse.result.value, error: AppError(response: alamoResponse))
 		}
 	}
 }

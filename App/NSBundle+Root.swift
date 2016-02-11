@@ -12,6 +12,7 @@ extension NSBundle {
 	
 	private static var _apiBaseUrl: String? = nil
 	
+	/// returns the API base url that is shared by your web services 
 	static var apiBaseUrl: String {
 		if (_apiBaseUrl == nil) {
 			_apiBaseUrl = NSBundle.mainBundle().objectForInfoDictionaryKey("kAPIBaseUrl") as? String ?? ""
