@@ -26,6 +26,7 @@
 		173B57E01C6B45FF00FEB036 /* NSURLRequest+Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765CDF21B25DDF8004CD54A /* NSURLRequest+Body.swift */; };
 		177691BC1C10C13E00A3D08A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691B91C10C13E00A3D08A /* Alamofire.framework */; };
 		177691BD1C10C13E00A3D08A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BA1C10C13E00A3D08A /* AlamofireImage.framework */; };
+		17D7841A1C6E424E003E32EA /* MailgunBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170655801C6D096100305EBC /* MailgunBusiness.swift */; };
 		17E39DFE1C157FD400D3BFBC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691B91C10C13E00A3D08A /* Alamofire.framework */; };
 		17E39DFF1C157FD700D3BFBC /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177691BA1C10C13E00A3D08A /* AlamofireImage.framework */; };
 		17E39E021C157FFB00D3BFBC /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D503B671BA059AD00C84F58 /* AppError.swift */; };
@@ -498,6 +499,7 @@
 				17EE775F1C6C9F3E009638A6 /* MailgunData.swift in Sources */,
 				172F068C1C6B2C7400B711B2 /* WeatherBusiness.swift in Sources */,
 				17E39E021C157FFB00D3BFBC /* AppError.swift in Sources */,
+				17D7841A1C6E424E003E32EA /* MailgunBusiness.swift in Sources */,
 				17EE775C1C6C8942009638A6 /* RouterProtocol.swift in Sources */,
 				173B57E01C6B45FF00FEB036 /* NSURLRequest+Body.swift in Sources */,
 				172F06831C6B2C3600B711B2 /* WeatherVC.swift in Sources */,
