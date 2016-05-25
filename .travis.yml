@@ -8,7 +8,7 @@ before_install:
 - sudo installer -pkg "Carthage.pkg" -target /
 - rm "Carthage.pkg"
 before_script:
-- carthage bootstrap --platform iOS
+- carthage bootstrap --no-use-binaries --platform iOS
 notifications:
   email:
     on_success: change
