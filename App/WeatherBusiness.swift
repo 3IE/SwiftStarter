@@ -10,15 +10,15 @@ import Foundation
 
 class WeatherBusiness {
 	
-	static func GetWeather(forTown town: TownWithWoeid, completed:((response:CurrentWeatherResponse?, error: AppError?) -> Void)) -> Void {
+	static func GetWeather(forTown town: TownWithWoeid, completed:@escaping ((_ response:CurrentWeatherResponse?, _ error: Error?) -> Void)) -> Void {
 		WeatherData.GetCurrentWeather(forTown: town) { (response, error) in
-			completed(response: response, error: error)
+			completed(response, error)
 		}
 	}
 	
-	static func GetForecast(forTown town: TownWithWoeid, completed:((response:ForecastResponse?, error: AppError?) -> Void)) -> Void {
+	static func GetForecast(forTown town: TownWithWoeid, completed:@escaping ((_ response:ForecastResponse?, _ error: Error?) -> Void)) -> Void {
 		WeatherData.GetForecast(forTown: town) { (response, error) in
-			completed(response: response, error: error)
+			completed(response, error)
 		}
 	}
 	
