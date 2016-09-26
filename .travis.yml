@@ -7,7 +7,7 @@ before_install:
 - curl -OlL "https://github.com/Carthage/Carthage/releases/download/0.18/Carthage.pkg"
 - sudo installer -pkg "Carthage.pkg" -target /
 - rm "Carthage.pkg"
-- "/Library/Frameworks/CarthageKit.framework"
+- rm "/Library/Frameworks/CarthageKit.framework"
 before_script:
 - carthage bootstrap --no-use-binaries --platform iOS
 notifications:
