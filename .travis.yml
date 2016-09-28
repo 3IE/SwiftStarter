@@ -12,7 +12,7 @@ before_script:
 - carthage bootstrap --platform iOS
 script:
 - set -o pipefail
-- xcodebuild -project App.xcodeproj -scheme App -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0' test | xcpretty -c
+- xcodebuild -project App.xcodeproj -scheme App -destination 'platform=iOS Simulator,name=iPhone 7,OS=9.0' test | xcpretty -c
 notifications:
   email:
     recipients:
