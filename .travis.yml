@@ -12,8 +12,12 @@ before_script:
 - carthage bootstrap --platform iOS
 script:
 - set -o pipefail
-- xcodebuild -project $TRAVIS_XCODE_PROJECT -scheme $TRAVIS_XCODE_SCHEME -sdk $TRAVIS_XCODE_SDK test | xcpretty -c
+- xcodebuild -project App.xcodeproj -scheme App -sdk iphonesimulator10.0 test | xcpretty -c
 notifications:
   email:
+    recipients:
+      - sabrine.elbahri@3ie.fr
+      - benoit.verdier@3ie.fr
+      - emmanuel.perez@3ie.fr
     on_success: change
     on_failure: always
