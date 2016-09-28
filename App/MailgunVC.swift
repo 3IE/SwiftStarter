@@ -19,25 +19,25 @@ class MailgunVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
     }
 
-	@IBAction func sendEmailAction(sender: AnyObject) {
+	@IBAction func sendEmailAction(_ sender: AnyObject) {
 		guard let recipient = self.recipientTextFieldOutlet.text, let subject = self.subjectTextFieldOutlet.text, let content = self.contentTextFieldOutlet.text else {
-				SVProgressHUD.showErrorWithStatus("Invalid data")
+				SVProgressHUD.showError(withStatus: "Invalid data")
 				return
 		}
-		SVProgressHUD.showWithStatus("Sending in progress")
+		SVProgressHUD.show(withStatus: "Sending in progress")
 		MailgunBusiness.SendMail(recipient: recipient, subject: subject, content: content) { (response, error) in
-			dispatch_async(dispatch_get_main_queue(), {
+			DispatchQueue.main.async(execute: {
 				if (error == nil) {
-					SVProgressHUD.showSuccessWithStatus("Mail sent")
+					SVProgressHUD.showSuccess(withStatus: "Mail sent")
 				}
 				else {
-					SVProgressHUD.showErrorWithStatus("Failed to send email")
+					SVProgressHUD.showError(withStatus: "Failed to send email")
 				}
 			})
 		}
 	}
 	
-	func textFieldShouldReturn(textField: UITextField) -> Bool {
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		textField.resignFirstResponder()
 		return true
 	}

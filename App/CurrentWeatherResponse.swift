@@ -12,14 +12,14 @@ import ObjectMapper
 struct CurrentWeatherResponse {
 	var count: Int?
 	var town: String?
-	var date: NSDate?
+	var date: Date?
 	var language: String?
 	var weatherCondition: WeatherCondition?
 	
 }
 
 extension CurrentWeatherResponse: Mappable {
-	init?(_ map: Map) {
+	init?(map: Map) {
 	}
 	
 	mutating func mapping(map: Map) {

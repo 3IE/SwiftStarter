@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 3IE. All rights reserved.
 //
 
-import Foundation
+/*import Foundation
 import Alamofire
 
 extension NSMutableURLRequest {
 
-	private convenience init(fullUrl :NSURL, method: Alamofire.Method) {
-		self.init(URL: fullUrl)
-		self.HTTPMethod = method.rawValue
+	fileprivate convenience init(fullUrl :URL, method: Alamofire.Method) {
+		self(url: fullUrl)
+		self.HTTPMethod = method.hashValue
 		//Add here some other settings for your request
 	}
 	
@@ -26,10 +26,10 @@ extension NSMutableURLRequest {
 	- returns: a new request based on the API base path
 	*/
 	convenience init?(apiPathRelativeToBase path: String, method: Alamofire.Method) {
-		guard let baseUrl = NSURL(string: NSBundle.apiBaseUrl), let fullUrl = NSURL(string: path, relativeToURL: baseUrl) else {
+		guard let baseUrl = NSURL(string: Bundle.apiBaseUrl), let fullUrl = NSURL(string: path, relativeTo: baseUrl as URL) else {
 			return nil
 		}
-		self.init(fullUrl: fullUrl, method: method)
+		self.init(fullUrl: fullUrl as URL, method: method)
 	}
 	
 	/**
@@ -44,7 +44,7 @@ extension NSMutableURLRequest {
 		guard let fullUrl = NSURL(string: path) else {
 			return nil
 		}
-		self.init(fullUrl: fullUrl, method: method)
+		self.init(fullUrl: fullUrl as URL, method: method)
 	}
 	
-}
+} */
