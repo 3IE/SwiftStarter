@@ -12,12 +12,10 @@ before_script:
 - carthage bootstrap --platform iOS
 script:
 - set -o pipefail
-- xcodebuild -project App.xcodeproj -scheme App -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' test | xcpretty -c
+- xcodebuild -project App.xcodeproj -scheme App -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' test | xcpretty
 notifications:
   email:
     recipients:
       - sabrine.elbahri@3ie.fr
-      - benoit.verdier@3ie.fr
-      - emmanuel.perez@3ie.fr
     on_success: change
     on_failure: always
