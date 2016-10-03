@@ -55,6 +55,16 @@
 		A79825201B18A6FC00F8E795 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A798251F1B18A6FC00F8E795 /* Images.xcassets */; };
 		A79825231B18A6FC00F8E795 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79825211B18A6FC00F8E795 /* LaunchScreen.xib */; };
 		A798252F1B18A6FC00F8E795 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A798252E1B18A6FC00F8E795 /* AppTests.swift */; };
+		CC30F6FE1DA2924D000146B4 /* FacebookInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30F6FD1DA2924D000146B4 /* FacebookInfoVC.swift */; };
+		CC30F7001DA297E4000146B4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC30F6FF1DA297E4000146B4 /* Default-568h@2x.png */; };
+		CC30F70B1DA2ABAA000146B4 /* socialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC30F70A1DA2ABAA000146B4 /* socialNetwork.framework */; };
+		CC34EA301DA2853900255715 /* FacebookConnectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC34EA2F1DA2853900255715 /* FacebookConnectVC.swift */; };
+		CC6645911DA2B45D008360E7 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC66458B1DA2B45D008360E7 /* FacebookCore.framework */; };
+		CC6645921DA2B45D008360E7 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC66458C1DA2B45D008360E7 /* FacebookLogin.framework */; };
+		CC6645931DA2B45D008360E7 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC66458D1DA2B45D008360E7 /* FacebookShare.framework */; };
+		CC6645941DA2B45D008360E7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC66458E1DA2B45D008360E7 /* FBSDKCoreKit.framework */; };
+		CC6645951DA2B45D008360E7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC66458F1DA2B45D008360E7 /* FBSDKLoginKit.framework */; };
+		CC6645961DA2B45D008360E7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6645901DA2B45D008360E7 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +123,16 @@
 		A79825281B18A6FC00F8E795 /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A798252D1B18A6FC00F8E795 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A798252E1B18A6FC00F8E795 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
+		CC30F6FD1DA2924D000146B4 /* FacebookInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookInfoVC.swift; path = App/FacebookInfoVC.swift; sourceTree = "<group>"; };
+		CC30F6FF1DA297E4000146B4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CC30F70A1DA2ABAA000146B4 /* socialNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = socialNetwork.framework; path = Carthage/Build/iOS/socialNetwork.framework; sourceTree = "<group>"; };
+		CC34EA2F1DA2853900255715 /* FacebookConnectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookConnectVC.swift; path = App/FacebookConnectVC.swift; sourceTree = "<group>"; };
+		CC66458B1DA2B45D008360E7 /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
+		CC66458C1DA2B45D008360E7 /* FacebookLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookLogin.framework; path = Carthage/Build/iOS/FacebookLogin.framework; sourceTree = "<group>"; };
+		CC66458D1DA2B45D008360E7 /* FacebookShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookShare.framework; path = Carthage/Build/iOS/FacebookShare.framework; sourceTree = "<group>"; };
+		CC66458E1DA2B45D008360E7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		CC66458F1DA2B45D008360E7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Carthage/Build/iOS/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		CC6645901DA2B45D008360E7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Carthage/Build/iOS/FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +140,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC6645911DA2B45D008360E7 /* FacebookCore.framework in Frameworks */,
+				CC6645921DA2B45D008360E7 /* FacebookLogin.framework in Frameworks */,
+				CC6645931DA2B45D008360E7 /* FacebookShare.framework in Frameworks */,
+				CC6645941DA2B45D008360E7 /* FBSDKCoreKit.framework in Frameworks */,
+				CC6645951DA2B45D008360E7 /* FBSDKLoginKit.framework in Frameworks */,
+				CC6645961DA2B45D008360E7 /* FBSDKShareKit.framework in Frameworks */,
+				CC30F70B1DA2ABAA000146B4 /* socialNetwork.framework in Frameworks */,
 				172F50451C68E6D0000A9D78 /* AlamofireObjectMapper.framework in Frameworks */,
 				172F50461C68E6D0000A9D78 /* ObjectMapper.framework in Frameworks */,
 				177691BC1C10C13E00A3D08A /* Alamofire.framework in Frameworks */,
@@ -191,6 +218,7 @@
 		A798250A1B18A6FC00F8E795 = {
 			isa = PBXGroup;
 			children = (
+				CC30F6FF1DA297E4000146B4 /* Default-568h@2x.png */,
 				A79825381B18A70C00F8E795 /* Core */,
 				A79825151B18A6FC00F8E795 /* App */,
 				A798252B1B18A6FC00F8E795 /* AppTests */,
@@ -258,6 +286,13 @@
 		A79825391B18A71000F8E795 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC66458B1DA2B45D008360E7 /* FacebookCore.framework */,
+				CC66458C1DA2B45D008360E7 /* FacebookLogin.framework */,
+				CC66458D1DA2B45D008360E7 /* FacebookShare.framework */,
+				CC66458E1DA2B45D008360E7 /* FBSDKCoreKit.framework */,
+				CC66458F1DA2B45D008360E7 /* FBSDKLoginKit.framework */,
+				CC6645901DA2B45D008360E7 /* FBSDKShareKit.framework */,
+				CC30F70A1DA2ABAA000146B4 /* socialNetwork.framework */,
 				17965D541C561B0C0013D390 /* Internal */,
 				17965D531C561B030013D390 /* External */,
 			);
@@ -269,6 +304,8 @@
 			children = (
 				17EE77441C6C7C65009638A6 /* MailgunVC.swift */,
 				172F06811C6B2C3600B711B2 /* WeatherVC.swift */,
+				CC34EA2F1DA2853900255715 /* FacebookConnectVC.swift */,
+				CC30F6FD1DA2924D000146B4 /* FacebookInfoVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -425,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A798251E1B18A6FC00F8E795 /* Main.storyboard in Resources */,
+				CC30F7001DA297E4000146B4 /* Default-568h@2x.png in Resources */,
 				A79825231B18A6FC00F8E795 /* LaunchScreen.xib in Resources */,
 				A79825201B18A6FC00F8E795 /* Images.xcassets in Resources */,
 			);
@@ -451,6 +489,14 @@
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireObjectMapper.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/socialNetwork.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FacebookCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FacebookLogin.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FacebookShare.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKShareKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKLoginKit.framework",
 			);
 			outputPaths = (
 			);
@@ -468,6 +514,7 @@
 				17EE77621C6CCC9A009638A6 /* MailgunResponse.swift in Sources */,
 				172F06821C6B2C3600B711B2 /* WeatherVC.swift in Sources */,
 				17EE77451C6C7C65009638A6 /* MailgunVC.swift in Sources */,
+				CC34EA301DA2853900255715 /* FacebookConnectVC.swift in Sources */,
 				172FE3431C69F0FA00496519 /* CurrentWeatherResponse.swift in Sources */,
 				A765CDF61B25E191004CD54A /* NSBundle+Root.swift in Sources */,
 				172F06881C6B2C6F00B711B2 /* WeatherData.swift in Sources */,
@@ -481,6 +528,7 @@
 				173B57DF1C6B45FE00FEB036 /* NSURLRequest+Body.swift in Sources */,
 				172F06851C6B2C5F00B711B2 /* IntTransform.swift in Sources */,
 				8D503B681BA059AD00C84F58 /* AppError.swift in Sources */,
+				CC30F6FE1DA2924D000146B4 /* FacebookInfoVC.swift in Sources */,
 				17EE77581C6C891E009638A6 /* TownWithWoeid.swift in Sources */,
 				172F068E1C6B2C8A00B711B2 /* WeatherCondition.swift in Sources */,
 				17EE77561C6C891E009638A6 /* ForecastResponse.swift in Sources */,
