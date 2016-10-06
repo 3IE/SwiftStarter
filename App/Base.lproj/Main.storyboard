@@ -119,10 +119,10 @@
             </objects>
             <point key="canvasLocation" x="-377" y="676"/>
         </scene>
-        <!--facebookLogin-->
+        <!--Facebook ConnectVC-->
         <scene sceneID="lSs-HE-MNL">
             <objects>
-                <viewController id="myq-d0-rrB" customClass="FacebookConnectVC" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FacebookConnectVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="myq-d0-rrB" customClass="FacebookConnectVC" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bCI-xJ-I7W"/>
                         <viewControllerLayoutGuide type="bottom" id="czi-6q-T7v"/>
@@ -144,21 +144,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sHz-z8-07o" firstAttribute="centerY" secondItem="Mjr-5x-ER3" secondAttribute="centerY" id="5fX-3F-Dye"/>
-                            <constraint firstAttribute="trailing" secondItem="sHz-z8-07o" secondAttribute="trailing" constant="60" id="6Fu-NG-Cbh"/>
-                            <constraint firstItem="sHz-z8-07o" firstAttribute="leading" secondItem="Mjr-5x-ER3" secondAttribute="leading" constant="60" id="IeD-I5-0tD"/>
+                            <constraint firstAttribute="trailing" secondItem="sHz-z8-07o" secondAttribute="trailing" constant="80" id="6Fu-NG-Cbh"/>
+                            <constraint firstItem="sHz-z8-07o" firstAttribute="leading" secondItem="Mjr-5x-ER3" secondAttribute="leading" constant="80" id="IeD-I5-0tD"/>
                             <constraint firstItem="sHz-z8-07o" firstAttribute="centerX" secondItem="Mjr-5x-ER3" secondAttribute="centerX" id="siG-KS-pkL"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="facebookLogin" id="NAL-Up-qpa" userLabel="facebookLogin">
-                        <inset key="imageInsets" minX="58" minY="5" maxX="58" maxY="5"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="g9p-h2-l8n"/>
                     <connections>
                         <segue destination="GSP-pM-hWj" kind="show" identifier="PushFacebookInfo" id="KAI-mV-Nvm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AmC-Lw-zEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-378" y="1352"/>
+            <point key="canvasLocation" x="560.79999999999995" y="1351.5742128935533"/>
         </scene>
         <!--Facebook InfoVC-->
         <scene sceneID="UnG-O6-DRv">
@@ -188,10 +186,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6N4-or-Mpz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="misterrabbit" translatesAutoresizingMaskIntoConstraints="NO" id="6N4-or-Mpz">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="AE9-Xk-9EW"/>
-                                    <constraint firstAttribute="width" constant="80" id="wfA-Tk-8Vh"/>
+                                    <constraint firstAttribute="height" constant="100" id="AE9-Xk-9EW"/>
+                                    <constraint firstAttribute="width" constant="100" id="wfA-Tk-8Vh"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXi-3Z-D24">
@@ -221,16 +219,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jO-0q-gII">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Km1-ZN-FFd"/>
-                                    <constraint firstAttribute="width" constant="55" id="NXo-jE-yBC"/>
-                                </constraints>
-                                <state key="normal" title="Log Out"/>
-                                <connections>
-                                    <action selector="LogOut:" destination="GSP-pM-hWj" eventType="touchUpInside" id="SLV-6m-2il"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="INd-xt-R8v">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Mst-rJ-pkS"/>
@@ -245,8 +233,6 @@
                             <constraint firstItem="cOY-Jg-cWg" firstAttribute="top" secondItem="DXi-3Z-D24" secondAttribute="bottom" constant="8" id="7AX-7w-Ykv"/>
                             <constraint firstItem="cOY-Jg-cWg" firstAttribute="leading" secondItem="qdF-TT-ZWj" secondAttribute="leading" constant="59" id="9Lr-BJ-CGX"/>
                             <constraint firstItem="1hd-6z-xIt" firstAttribute="leading" secondItem="qdF-TT-ZWj" secondAttribute="leading" constant="59" id="Axi-PI-1Np"/>
-                            <constraint firstItem="B3Y-R4-5x8" firstAttribute="top" secondItem="2jO-0q-gII" secondAttribute="bottom" constant="18" id="BrF-pd-NPx"/>
-                            <constraint firstAttribute="trailing" secondItem="2jO-0q-gII" secondAttribute="trailing" constant="11" id="G52-nP-izq"/>
                             <constraint firstItem="It1-lD-Ibi" firstAttribute="leading" secondItem="qdF-TT-ZWj" secondAttribute="leading" constant="59" id="LQY-eW-C5B"/>
                             <constraint firstAttribute="trailing" secondItem="Ib9-U2-4rL" secondAttribute="trailing" constant="59" id="MsV-LL-wJ0"/>
                             <constraint firstItem="Ib9-U2-4rL" firstAttribute="top" secondItem="It1-lD-Ibi" secondAttribute="bottom" constant="8" id="PFn-ba-FQQ"/>
@@ -258,7 +244,7 @@
                             <constraint firstAttribute="trailing" secondItem="cOY-Jg-cWg" secondAttribute="trailing" constant="59" id="ZpZ-Nd-V9R"/>
                             <constraint firstItem="6N4-or-Mpz" firstAttribute="centerX" secondItem="qdF-TT-ZWj" secondAttribute="centerX" id="apX-kv-ATw"/>
                             <constraint firstItem="It1-lD-Ibi" firstAttribute="top" secondItem="cOY-Jg-cWg" secondAttribute="bottom" constant="22" id="djw-qc-0Em"/>
-                            <constraint firstItem="6N4-or-Mpz" firstAttribute="centerY" secondItem="qdF-TT-ZWj" secondAttribute="centerY" constant="-200" id="l9G-zq-NNi"/>
+                            <constraint firstItem="6N4-or-Mpz" firstAttribute="top" secondItem="JFs-y8-m2f" secondAttribute="bottom" constant="73.5" id="s84-41-qBF"/>
                             <constraint firstItem="DXi-3Z-D24" firstAttribute="leading" secondItem="qdF-TT-ZWj" secondAttribute="leading" constant="59" id="ulI-yj-YXR"/>
                             <constraint firstItem="Ib9-U2-4rL" firstAttribute="leading" secondItem="qdF-TT-ZWj" secondAttribute="leading" constant="59" id="zXe-aF-MlU"/>
                         </constraints>
@@ -272,12 +258,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehP-oh-Qon" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="352.80000000000001" y="1351.5742128935533"/>
+            <point key="canvasLocation" x="1292" y="1351.5742128935533"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hrt-3I-bsI">
             <objects>
-                <tabBarController id="0LN-Fz-xf1" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0LN-Fz-xf1" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="GX4-kO-cR4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -286,7 +272,7 @@
                     <connections>
                         <segue destination="FC8-ru-SfZ" kind="relationship" relationship="viewControllers" id="3tJ-fK-Xw5"/>
                         <segue destination="QFK-Nz-5l3" kind="relationship" relationship="viewControllers" id="Z9Q-rN-AUY"/>
-                        <segue destination="myq-d0-rrB" kind="relationship" relationship="viewControllers" id="hYA-M3-Lr8"/>
+                        <segue destination="4eK-1W-7AK" kind="relationship" relationship="viewControllers" id="hYA-M3-Lr8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvm-OS-cmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -378,8 +364,30 @@ Forecast 2</string>
             </objects>
             <point key="canvasLocation" x="-377" y="-17"/>
         </scene>
+        <!--facebookLogin-->
+        <scene sceneID="ky3-dm-Slt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4eK-1W-7AK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="facebookLogin" id="NAL-Up-qpa" userLabel="facebookLogin">
+                        <inset key="imageInsets" minX="58" minY="5" maxX="58" maxY="5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z1V-pZ-vCG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="myq-d0-rrB" kind="relationship" relationship="rootViewController" id="qVO-x0-6ba"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tGB-EJ-LoD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-378.39999999999998" y="1351.5742128935533"/>
+        </scene>
     </scenes>
     <resources>
         <image name="loginWithFacebook" width="202" height="46"/>
+        <image name="misterrabbit" width="249" height="329"/>
     </resources>
 </document>

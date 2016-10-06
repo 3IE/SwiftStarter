@@ -8,50 +8,44 @@
 
 import UIKit
 import socialNetwork
+import SVProgressHUD
 
 class FacebookConnectVC: UIViewController {
 
     //MARK: - Properties
-    var facebookId: String?
     var firstName: String?
     var lastName: String?
     var email: String?
-    var profileImageView: UIImageView?
-    var loginWithFacebook: LogInWithFacebook = LogInWithFacebook.init()
+    var facebookId: String?
+    var logInWithFacebook: LogInWithFacebook = LogInWithFacebook.init()
+    var logOutWithFacebook: LogOutWithFacebook = LogOutWithFacebook.init()
     
     //MARK: - VC methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        logOutWithFacebook.logOut()
+    }
+    
     //MARK: - Login
     @IBAction func LogIn(_ sender: AnyObject) {
-        loginWithFacebook.login(self) { userInfo, cancelled, failed, isDeclinedPermissions in
+        logInWithFacebook.login(self) { userInfo, cancelled, failed, isDeclinedPermissions in
             if userInfo != nil {
-                self.facebookId  = self.loginWithFacebook.getFacebookIdFromUserInfoInTheCompletionHandlerFromLoginFunction(userInfo!)
-                self.firstName = self.loginWithFacebook.getUserFirstNameFromUserInfoInTheCompletionHandlerFromLoginFunction(userInfo!)
-                self.lastName = self.loginWithFacebook.getUserLastNameFromUserInfoInTheCompletionHandlerFromLoginFunction(userInfo!)
-                self.email = self.loginWithFacebook.getUserEmailFromUserInfoInTheCompletionHandlerFromLoginFunction(userInfo!)
+                SVProgressHUD.show(withStatus: "Chargement")
+
+                self.facebookId  = self.logInWithFacebook.getFacebookIdFromUserInfoInTheCompletionHandlerFromLoginFunction(userInfo!)
+                self.firstName = self.logInWithFacebook.getUserFirstNameFromUserInfoInTheCompletionHandlerFromLoginFunction(userInfo!)
+                self.lastName = self.logInWithFacebook.getUserLastNameFromUserInfoInTheCompletionHandlerFromLoginFunction(userInfo!)
+                self.email = self.logInWithFacebook.getUserEmailFromUserInfoInTheCompletionHandlerFromLoginFunction(userInfo!)
                 
-                self.loginWithFacebook.getFacebookProfileImageUrlAsync(self.facebookId) { image in
-                    self.profileImageView?.image = image
-                    self.profileImageView?.contentMode = .scaleAspectFit
-                    self.cropping(imageView: self.profileImageView!)
-                    
-                    self.performSegue(withIdentifier: "PushFacebookInfo", sender: nil)
-                }
+                self.performSegue(withIdentifier: "PushFacebookInfo", sender: nil)
+
             }
             
         }
-    }
-    
-    //MARK: - Treatment on image
-    func cropping(imageView: UIImageView) {
-        imageView.layer.borderWidth = 1
-        imageView.layer.masksToBounds = false
-        imageView.layer.borderColor = UIColor.white.cgColor
-        imageView.layer.cornerRadius = imageView.frame.height / 2
-        imageView.clipsToBounds = true
     }
     
     //MARK: - TextFieldKeyboard
@@ -69,7 +63,8 @@ class FacebookConnectVC: UIViewController {
             controller.firstName = firstName
             controller.lastName = lastName
             controller.email = email
-            controller.ProfileImageView = profileImageView
+            controller.facebookId = facebookId!
+            controller.loginWithFacebook = logInWithFacebook
         }
     }
 }

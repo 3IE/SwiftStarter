@@ -8,6 +8,7 @@
 
 import UIKit
 import socialNetwork
+import SVProgressHUD
 
 class FacebookInfoVC: UIViewController {
 
@@ -21,18 +22,46 @@ class FacebookInfoVC: UIViewController {
     var firstName: String?
     var lastName: String?
     var email: String?
-    var logOutWithFacebook: LogOutWithFacebook = LogOutWithFacebook.init()
-    
+    var facebookId: String?
+    var loginWithFacebook: LogInWithFacebook?
+
     //MARK: - Vc methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        SVProgressHUD.dismiss()
+        setupFacebookInformartion()
     }
     
-    //MARK: - LogOut
-    @IBAction func LogOut(_ sender: AnyObject) {
-        logOutWithFacebook.logOut()
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller: FacebookConnectVC = storyboard.instantiateViewController(withIdentifier: "FacebookConnectVC") as! FacebookConnectVC
-        self.present(controller, animated: true, completion: nil)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        cropping(imageView: ProfileImageView)
+
     }
+    
+    //MARK: - Setup view
+    func setupFacebookInformartion() {
+        firstNameTextField.text = firstName
+        firstNameTextField.isEnabled = false
+        lastNameTextField.text = lastName
+        lastNameTextField.isEnabled = false
+        emailTextField.text = email
+        emailTextField.isEnabled = false
+        
+        self.loginWithFacebook?.getFacebookProfileImageUrlAsync(self.facebookId!) { image in
+            self.ProfileImageView.image = image
+            self.ProfileImageView.contentMode = .scaleAspectFit
+        }
+    }
+    
+    
+    //MARK: - Treatment on image
+    func cropping(imageView: UIImageView) {
+        ProfileImageView.layer.borderWidth = 1
+        ProfileImageView.layer.masksToBounds = false
+        ProfileImageView.layer.borderColor = UIColor.white.cgColor
+        ProfileImageView.layer.cornerRadius = ProfileImageView.frame.height / 2
+        ProfileImageView.clipsToBounds = true
+    }
+    
 }
