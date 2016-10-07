@@ -93,7 +93,4 @@ $ carthage update --no-use-binaries --platform iOS
 
 ## Documentation
 
-Use <a href="https://github.com/onevcat/VVDocumenter-Xcode">VVDocumenter-Xcode</a> to generate your methods documentation by simply typing `///` above them
-
-
-
+Use the shortcut (⌥ Option + ⌘ Command + /) in Xcode 8 to add documentation to your code.
