@@ -10,9 +10,9 @@ import Foundation
 
 class MailgunBusiness {
 
-	static func SendMail(recipient recipient: String, subject: String, content: String, completed:((response: MailgunResponse?, error: AppError?) -> Void)) -> Void {
+	static func SendMail(recipient: String, subject: String, content: String, completed:@escaping ((_ response: MailgunResponse?, _ error: Error?) -> Void)) -> Void {
 		MailgunData.SendMail(recipient: recipient, subject: subject, content: content) { (response, error) in
-			completed(response: response, error: error)
+			completed(response, error)
 		}
 	}
 	

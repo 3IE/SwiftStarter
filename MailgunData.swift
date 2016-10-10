@@ -15,22 +15,22 @@ private let kMailgunApiKey = "" //TODO: fill this with your info
 
 //MARK: Router class
 private enum Router {
-	case SendMail([String: AnyObject])
+	case sendMail([String: AnyObject])
 }
 
 //MARK: RouterProtocol
 extension Router: RouterProtocol {
-	
-	var method: Alamofire.Method {
-		switch self {
-		case .SendMail:
-			return .POST
-		}
-	}
-	
+    
+    var method: Alamofire.HTTPMethod {
+        switch self {
+        case .sendMail:
+            return .post
+        }
+    }
+
 	var path: String {
 		switch self {
-		case .SendMail:
+		case .sendMail:
 			return "https://api.mailgun.net/v3/sandbox72c4329542d34f668085a9f3d71203e9.mailgun.org/messages"
 		}
 	}
@@ -38,32 +38,38 @@ extension Router: RouterProtocol {
 
 //MARK: URLRequestConvertible
 extension Router: URLRequestConvertible {
-	var URLRequest: NSMutableURLRequest {
-		guard let mutableURLRequest = NSMutableURLRequest(apiPathAbsolute: self.path, method: self.method) else {
-			return NSMutableURLRequest()
-		}
-		switch self {
-		case .SendMail(let body):
-			return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: body).0
-		}
-	}
+    /// Returns a URL request or throws if an `Error` was encountered.
+    ///
+    /// - throws: An `Error` if the underlying `URLRequest` is `nil`.
+    ///
+    /// - returns: A URL request.
+    public func asURLRequest() throws -> URLRequest {
+        
+        var urlRequest = URLRequest(url: URL(string: self.path)!)
+        urlRequest.httpMethod = self.method.rawValue
+
+        switch self {
+        case .sendMail(let body):
+            return try Alamofire.URLEncoding.default.encode(urlRequest, with: body)
+        }
+    }
 }
 
 //MARK: - WeatherData
 class MailgunData {
 	
-	static func SendMail(recipient recipient: String, subject: String, content: String, completed:((response: MailgunResponse?, error: AppError?) -> Void)) -> Void {
+	static func SendMail(recipient: String, subject: String, content: String, completed:@escaping ((_ response: MailgunResponse?, _ error: Error?) -> Void)) -> Void {
 		precondition(kMailgunSender.characters.count > 0 && kMailgunApiKey.characters.count > 0, "You need to provide the mailgun info")
 		let body: [String: AnyObject] = [
-			"from": kMailgunSender,
-			"to": recipient,
-			"subject": subject,
-			"text": content]		
-		Alamofire.request(Router.SendMail(body))
+			"from": kMailgunSender as AnyObject,
+			"to": recipient as AnyObject,
+			"subject": subject as AnyObject,
+			"text": content as AnyObject]		
+		Alamofire.request(Router.sendMail(body))
 			.authenticate(user: "api", password: kMailgunApiKey)
 			.validate()
-			.responseObject { (alamoResponse: Response<MailgunResponse, NSError>) in
-				completed(response: alamoResponse.result.value, error: AppError(response: alamoResponse))
+			.responseObject { (alamoResponse: DataResponse<MailgunResponse>) in
+				completed(alamoResponse.result.value, alamoResponse.result.error)
 		}
 	}
 }
