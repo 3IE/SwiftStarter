@@ -17,7 +17,7 @@ struct WeatherCondition {
 
 //MARK: ObjectMapper
 extension WeatherCondition: Mappable {
-	init?(_ map: Map) {
+	init?(map: Map) {
 	}
 	
 	mutating func mapping(map: Map) {

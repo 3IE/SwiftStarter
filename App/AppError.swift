@@ -17,14 +17,14 @@ The various kind of app errors
 - Parsing:    the server responded but the response could not be parsed
 - Server:     the server responded a custom error message
 */
-enum AppError: ErrorType {
-    case NoResponse(String)
-    case Parsing(String)
-    case Server(Int, String)
+enum AppError: Error {
+    case noResponse(String)
+    case parsing(String)
+    case server(Int, String)
     
     var code: Int {
         switch self {
-        case .Server(let code, _):
+        case .server(let code, _):
             return code
         default:
             return -100
@@ -33,7 +33,7 @@ enum AppError: ErrorType {
     
     var message: String {
         switch self {
-        case .Server(_, let message):
+        case .server(_, let message):
             return getDomain() + message
         default:
             return "[parsing] app : "
@@ -44,12 +44,12 @@ enum AppError: ErrorType {
 //MARK: - AlamoFire
 
 extension AppError {
-	init?<T>(response: Alamofire.Response<T, NSError>) {
+	init?<T>(response: Alamofire.DataResponse<T>) {
 		if (response.response == nil) {
-			self = .NoResponse("No Response")
+			self = .noResponse("No Response")
 		}
 		else if (response.result.isFailure || response.result.value == nil) {
-			self = .Parsing("Parsing failure")
+			self = .parsing("Parsing failure")
 		}
 		else {
 			return nil
@@ -61,8 +61,8 @@ extension AppError {
 //MARK: - ObjectMapper
 
 extension AppError : Mappable {
-	init?(_ map: Map) {
-		self = .Server(0, "msg")
+	init?(map: Map) {
+		self = .server(0, "msg")
 	}
 	
 	mutating func mapping(map: Map) {
@@ -70,14 +70,14 @@ extension AppError : Mappable {
 		var parsedCode : Int = 0
 		parsedMessage <- map["message"]
 		parsedCode <- map["code"]
-		self = .Server(parsedCode, parsedMessage)
+		self = .server(parsedCode, parsedMessage)
 	}
 }
 
 //MARK: - Helpers
 
 private func getDomain() -> String {
-    if let domain: String = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleIdentifier") as? String {
+    if let domain: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleIdentifier") as? String {
         return domain
     } else {
         return ""

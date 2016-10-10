@@ -19,7 +19,7 @@ struct Forecast {
 
 //MARK: ObjectMapper
 extension Forecast: Mappable {
-	init?(_ map: Map) {
+	init?(map: Map) {
 	}
 	
 	mutating func mapping(map: Map) {

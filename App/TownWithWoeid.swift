@@ -14,20 +14,20 @@ protocol TownWithWoeidProtocol {
 }
 
 enum TownWithWoeid: TownWithWoeidProtocol {
-	case Paris
-	case KremlinBicetre
+	case paris
+	case kremlinBicetre
 	
 	var name: String {
 		switch  self {
-		case .Paris: return "Paris"
-		case .KremlinBicetre : return "Le Kremlin Bicetre"
+		case .paris: return "Paris"
+		case .kremlinBicetre : return "Le Kremlin Bicetre"
 		}
 	}
 	
 	var woeid: String {
 		switch  self {
-		case .Paris: return "615702"
-		case .KremlinBicetre : return "55863504"
+		case .paris: return "615702"
+		case .kremlinBicetre : return "55863504"
 		}
 	}
 }

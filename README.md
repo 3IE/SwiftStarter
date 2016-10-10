@@ -83,17 +83,14 @@ In this starter kit, we provide several external frameworks that we use in our p
 We use carthage, so you have to compile the frameworks from a terminal before compiling the project.
 Run this command to download and compile the frameworks referenced in the 'Cartfile.resolved' file.
 ```shell
-$ carthage bootstrap --platform iOS
+$ carthage bootstrap --no-use-binaries --platform iOS
 ```
 
 To update to the latest version of the frameworks (referenced in the 'Cartfile') and regenerate 'Cartfile.resolved' file, run this command :
 ```shell
-$ carthage update --platform iOS
+$ carthage update --no-use-binaries --platform iOS
 ```
 
 ## Documentation
 
-Use <a href="https://github.com/onevcat/VVDocumenter-Xcode">VVDocumenter-Xcode</a> to generate your methods documentation by simply typing `///` above them
-
-
-
+Use the shortcut (⌥ Option + ⌘ Command + /) in Xcode 8 to add documentation to your code.
