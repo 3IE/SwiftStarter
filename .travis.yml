@@ -15,7 +15,7 @@ before_install:
 install: true
 script:
 - set -o pipefail
-- scripts/cibuild
+- scripts/cibuild.sh
 notifications:
   email:
     recipients:
