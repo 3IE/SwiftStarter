@@ -20,6 +20,6 @@ notifications:
   email:
     recipients:
       - sabrine.elbahri@3ie.fr
-	  - benoit.verdier@3ie.fr
+      - benoit.verdier@3ie.fr
     on_success: change
     on_failure: always
