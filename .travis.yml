@@ -3,19 +3,23 @@ osx_image: xcode8.2
 xcode_project: App.xcodeproj
 xcode_scheme: App
 xcode_sdk: iphonesimulator10.1
+cache:
+  directories:
+  - Carthage
 before_install:
 - curl -OlL "https://github.com/Carthage/Carthage/releases/download/0.18.1/Carthage.pkg"
 - sudo installer -pkg "Carthage.pkg" -target /
-- rm "Carthage.pkg"
+- curl -L -O https://github.com/YPlan/CartfileDiff/releases/download/0.1/CartfileDiff.pkg
+- sudo installer -pkg CartfileDiff.pkg -target /
 - gem install xcpretty
-before_script:
-- carthage bootstrap --no-use-binaries --platform iOS
+install: true
 script:
 - set -o pipefail
-- xcodebuild -project App.xcodeproj -scheme App -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.1' test | xcpretty
+- scripts/cibuild
 notifications:
   email:
     recipients:
       - sabrine.elbahri@3ie.fr
+	  - benoit.verdier@3ie.fr
     on_success: change
     on_failure: always
