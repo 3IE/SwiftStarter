@@ -2,7 +2,7 @@ language: objective-c
 osx_image: xcode8.2
 xcode_project: App.xcodeproj
 xcode_scheme: App
-xcode_sdk: iphonesimulator10.1
+xcode_sdk: iphonesimulator10.2
 cache:
   directories:
   - Carthage
@@ -16,7 +16,7 @@ install: true
 script:
 - set -o pipefail
 - scripts/bootstrap-if-needed.sh
-- xcodebuild -project App.xcodeproj -scheme App -sdk iphonesimulator10.1 -destination "OS=10.1,name=iPhone 6" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty
+- xcodebuild -project App.xcodeproj -scheme App -sdk iphonesimulator10.2 -destination "OS=10.2,name=iPhone 6" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty
 notifications:
   email:
     recipients:
