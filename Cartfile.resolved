@@ -1,5 +1,5 @@
 github "Alamofire/Alamofire" "4.0.0"
 github "Hearst-DD/ObjectMapper" "2.0.0"
-github "SVProgressHUD/SVProgressHUD" "2.0.3"
+github "SVProgressHUD/SVProgressHUD" "2.1.2"
 github "Alamofire/AlamofireImage" "3.0.0"
 github "tristanhimmelman/AlamofireObjectMapper" "4.0.0"
