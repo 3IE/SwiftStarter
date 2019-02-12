@@ -13,7 +13,7 @@ install: true
 script:
   - set -o pipefail
   - scripts/bootstrap-if-needed.sh
-  - xcodebuild -project iOS-Starter2019.xcodeproj -scheme "iOS-Starter2019" -destination "name=iPhone XS" -configuration Debug ONLY_ACTIVE_ARCH=NO | xcpretty
+  - xcodebuild -project SwiftStarter.xcodeproj -scheme "SwiftStarter" -destination "name=iPhone XS" -configuration Debug ONLY_ACTIVE_ARCH=NO | xcpretty
 notifications:
   email:
     recipients:
