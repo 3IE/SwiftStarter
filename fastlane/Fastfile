@@ -11,11 +11,11 @@ lane :"beta" do
     )
     gym(
         configuration: "Debug",
-        scheme: "iOS-Starter2019",
+        scheme: "SwiftStarter",
         silent: false,
         clean: true,
         output_directory: "Build",
-        output_name: "iOS-Starter2019.ipa",
+        output_name: "SwiftStarter.ipa",
         export_method: "development",
     )
     upload_to_testflight(skip_submission: true)
@@ -28,11 +28,11 @@ lane :"release" do
     )
     gym(
         configuration: "Release",
-        scheme: "iOS-Starter2019",
+        scheme: "SwiftStarter",
         silent: false,
         clean: true,
         output_directory: "Build",
-        output_name: "iOS-Starter2019.ipa",
+        output_name: "SwiftStarter.ipa",
         export_method: "app-store"
     )
     deliver(
