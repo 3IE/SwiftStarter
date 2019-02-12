@@ -1,0 +1,7 @@
+git_url("https://github.com/3IE/ios_certificates")
+storage_mode("git")
+
+type("development")
+app_identifier("fr.3ie.iOS-Starter2019")
+git_branch("master")
+team_id("ZA25QH9A8G") # ASSO EPITA
