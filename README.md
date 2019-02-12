@@ -1,6 +1,6 @@
-# StarterKit iOS
+# iOS-Starter2019
 
-Build : [![Build Status](https://travis-ci.org/3IE/SwiftStarter.svg?branch=develop)](https://travis-ci.org/3IE/SwiftStarter)
+Build : [![Build Status](https://travis-ci.org/3IE/iOS-Starter2019.svg?branch=develop)](https://travis-ci.org/3IE/iOS-Starter2019)
 
 
 This Starter Kit is a project which we use at 3IE every time we have to begin a new iOS application development.
@@ -21,15 +21,18 @@ That's why we almost always have 3 main targets:
 
 This allows us to have different plist files to store information but this also allows us to have some resources depending the target we compile.
 
-### Core
+#### Frameworks
 
-The `Core` folder is the one that will contain all the code files and resources that have to be compiled with each target. If a code file has to be compiled with only one of the targets, it has to be in the target folder.
+The `Framework` folder is used to add some open source frameworks we found on places like github and that we need to integrate into our projects. To add these projects into our own, we decided to use the git submodule way of doing it since it is the easier and the best from our point of view.
+Compile time may be a bit longer the first time since it has to compile the external frameworks we added but we can see what happens if there is an error and we can place the submodule on whichever commit we want.
 
-This folder is divided into 6 folder where each one of them has a specific role for the architecture.
+In this starter kit, we provide several external frameworks that we use in our project and that helps this architecture be what it is.
 
-#### Utils
-
-The `utils` folder is the one that will contains some general classes with helper methods. The main goal is that this folder contain files, classes and methods that can be useful in every project we develop.
+- <a href="https://github.com/Alamofire/Alamofire">Alamofire</a> is an HTTP networking library written in Swift.
+- <a href="https://github.com/Alamofire/AlamofireImage">AlamofireImage</a> is an image component library for Alamofire.
+- <a href="https://github.com/Hearst-DD/ObjectMapper">ObjectMapper</a> is a JSON mapping library.
+- <a href="https://github.com/tristanhimmelman/AlamofireObjectMapper">AlamofireObjectMapper</a> is an Alamofire extension which simplifies ObjectMapper usage.
+- <a href="https://github.com/SVProgressHUD/SVProgressHUD">SVProgressHUD</a> is a lightweight progress HUD.
 
 #### Models
 
@@ -42,6 +45,10 @@ The `DataAccess` folder contains files that will provide some services to our bu
 #### Business
 
 The `Business` folder contains files that will call some services and work over the datas returned from these services to have a data that can be served to the controller which was calling that business method.
+
+#### Utils
+
+The `utils` folder is the one that will contains some general classes with helper methods. The main goal is that this folder contain files, classes and methods that can be useful in every project we develop.
 
 #### Controllers
 
@@ -63,19 +70,6 @@ The `Controllers` folder contains all your controllers files (eg. UIViewControll
 
 This folder is useful to store all of Apple's frameworks like CoreData, Social, Accounts, HomeKit, ...
 This folder can also contains some frameworks developed by ourselves.
-
-#### External
-
-The `External Framework` folder is used to add some open source frameworks we found on places like github and that we need to integrate into our projects. To add these projects into our own, we decided to use the git submodule way of doing it since it is the easier and the best from our point of view.
-Compile time may be a bit longer the first time since it has to compile the external frameworks we added but we can see what happens if there is an error and we can place the submodule on whichever commit we want.
-
-In this starter kit, we provide several external frameworks that we use in our project and that helps this architecture be what it is.
-
-- <a href="https://github.com/Alamofire/Alamofire">Alamofire</a> is an HTTP networking library written in Swift.
-- <a href="https://github.com/Alamofire/AlamofireImage">AlamofireImage</a> is an image component library for Alamofire.
-- <a href="https://github.com/Hearst-DD/ObjectMapper">ObjectMapper</a> is a JSON mapping library.
-- <a href="https://github.com/tristanhimmelman/AlamofireObjectMapper">AlamofireObjectMapper</a> is an Alamofire extension which simplifies ObjectMapper usage.
-- <a href="https://github.com/SVProgressHUD/SVProgressHUD">SVProgressHUD</a> is a lightweight progress HUD.
 
 
 ## Installing the external frameworks

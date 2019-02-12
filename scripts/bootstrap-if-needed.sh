@@ -2,7 +2,7 @@
 
 SCRIPT_DIR=$(dirname "$0")
 BOOTSTRAP="$SCRIPT_DIR/bootstrap.sh"
-CACHED_CARTFILE="Carthage/Cartfile.resolved"
+CACHED_CARTFILE="../Cartfile.resolved"
 
 if [ -e "$CACHED_CARTFILE" ]; then
   OUTDATED_DEPENDENCIES=$(cartfilediff "$CACHED_CARTFILE" Cartfile.resolved)
@@ -18,5 +18,3 @@ else
   echo "Cached Cartfile.resolved not found, bootstrapping all dependencies"
   "$BOOTSTRAP"
 fi
-
-cp Cartfile.resolved Carthage
