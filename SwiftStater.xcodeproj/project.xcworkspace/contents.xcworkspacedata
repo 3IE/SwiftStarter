@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/sofiane.beors/3IE/SwiftStarter/SwiftStater.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
