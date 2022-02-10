@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-import AlamofireObjectMapper
+import ObjectMapper
 
 private enum Router {
     case sendData([String: String])
@@ -48,13 +48,19 @@ extension Router: URLRequestConvertible {
 }
 
 public class SendData {
-    static func sendData(data: String, dateSent: Date, _ completed: @escaping ((_ response: SendResponse?, _ error: NSError?) -> Void)) -> Void {
+    static func sendData(data: String, dateSent: Date, _ completed: @escaping ((_ response: SendResponse?, _ error: AFError?) -> Void)) -> Void {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let dateString = dateFormatter.string(from: dateSent)
         let body: [String: String] = ["data": data, "dateSent": dateString]
-        Alamofire.request(Router.sendData(body)).validate().responseObject { (response: DataResponse<SendResponse>) in
-            completed(response.result.value, response.result.error as NSError?)
+        AF.request(Router.sendData(body)).validate().responseString { response in
+            do {
+                let mappedData = try Mapper<SendResponse>().map(JSONString: response.result.get())
+                completed(mappedData, response.error)
+            } catch {
+                print(error.localizedDescription)
+                completed(nil, error as? AFError)
+            }
         }
     }
 }

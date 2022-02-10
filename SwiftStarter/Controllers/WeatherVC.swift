@@ -6,7 +6,7 @@
 //  Copyright © 2019 3ie. All rights reserved.
 //
 
-import SVProgressHUD
+import MBProgressHUD
 
 class WeatherVC: UIViewController {
     
@@ -17,22 +17,20 @@ class WeatherVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
         self.cityLabel.text = CityModel.kremlinBicetre.name
         self.forecastTextView.text = ""
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        SVProgressHUD.show(withStatus: "Fetching in progress")
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         
         WeatherBusiness.getCurrentWeather(forCity: .kremlinBicetre) { (response, error) in
             DispatchQueue.main.async {
                 guard let response = response, error == nil else { fatalError((error?.localizedDescription)!) }
                 self.temperatureLabel.text = "\(response.temperature ?? 0) °C"
                 self.descriptionLabel.text = response.weatherInfos?.first?.description?.capitalizingFirstLetter() ?? "Unknown weather"
-                SVProgressHUD.showSuccess(withStatus: "Done")
-                SVProgressHUD.dismiss(withDelay: 1.5)
+                MBProgressHUD.hide(for: self.view, animated: true)
             }
         }
         

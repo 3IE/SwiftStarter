@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-import AlamofireObjectMapper
+import ObjectMapper
 
 private enum Router {
     case currentWeather(CityModel)
@@ -48,15 +48,27 @@ extension Router: URLRequestConvertible {
 }
 
 public class WeatherData {
-    static func getCurrentWeather(city: CityModel, _ completed: @escaping ((_ response: WeatherResponse?, _ error: NSError?) -> Void)) -> Void {
-        Alamofire.request(Router.currentWeather(city)).validate().responseObject { (response: DataResponse<WeatherResponse>) in
-            completed(response.result.value, response.result.error as NSError?)
+    static func getCurrentWeather(city: CityModel, _ completed: @escaping ((_ response: WeatherResponse?, _ error: AFError?) -> Void)) -> Void {
+        AF.request(Router.currentWeather(city)).validate().responseString { response in
+            do {
+                let mappedData = try Mapper<WeatherResponse>().map(JSONString: response.result.get())
+                completed(mappedData, response.error)
+            } catch {
+                print(error.localizedDescription)
+                completed(nil, error as? AFError)
+            }
         }
     }
     
-    static func getForecast(city: CityModel, _ completed: @escaping ((_ response: ForecastResponse?, _ error: NSError?) -> Void)) -> Void {
-        Alamofire.request(Router.forecast(city)).validate().responseObject { (response: DataResponse<ForecastResponse>) in
-            completed(response.result.value, response.result.error as NSError?)
+    static func getForecast(city: CityModel, _ completed: @escaping ((_ response: ForecastResponse?, _ error: AFError?) -> Void)) -> Void {
+        AF.request(Router.forecast(city)).validate().responseString { response in
+            do {
+                let mappedData = try Mapper<ForecastResponse>().map(JSONString: response.result.get())
+                completed(mappedData, response.error)
+            } catch {
+                print(error.localizedDescription)
+                completed(nil, error as? AFError)
+            }
         }
     }
 }
