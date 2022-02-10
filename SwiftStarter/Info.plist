@@ -47,7 +47,7 @@
 	<key>kAPIBaseUrl</key>
 	<string>http://api.openweathermap.org</string>
 	<key>kAPIKey</key>
-	<string>ec88cb1e341b2997c57af7e8d3ba3201</string>
+	<string>8b994bad63f89e4509b9b950905d242e</string>
 	<key>kSecondAPIBaseUrl</key>
 	<string>https://postman-echo.com</string>
 </dict>

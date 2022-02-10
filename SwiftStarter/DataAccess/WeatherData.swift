@@ -28,9 +28,9 @@ extension Router: RouterProtocol {
     var path: String {
         switch self {
         case .currentWeather(let city):
-            return "\(Bundle.apiBaseUrl)/data/2.5/weather?q=\(String(describing: city.name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!))&APPID=\(Bundle.apiKey)&units=metric&lang=fr"
+            return "\(Bundle.apiBaseUrl)/data/2.5/weather?q=\(String(describing: city.name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!))&appid=\(Bundle.apiKey)&units=metric&lang=fr"
         case .forecast(let city):
-            return "\(Bundle.apiBaseUrl)/data/2.5/forecast?q=\(String(describing: city.name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!))&APPID=\(Bundle.apiKey)&units=metric&lang=fr"
+            return "\(Bundle.apiBaseUrl)/data/2.5/forecast?q=\(String(describing: city.name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!))&appid=\(Bundle.apiKey)&units=metric&lang=fr"
         }
     }
  }
