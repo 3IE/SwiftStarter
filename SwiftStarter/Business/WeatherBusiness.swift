@@ -9,15 +9,13 @@
 import Foundation
 
 class WeatherBusiness {
-    static func getCurrentWeather(forCity city: CityModel, completed: @escaping ((_ response: WeatherResponse?, _ error: Error?) -> Void)) -> Void {
-        WeatherData.getCurrentWeather(city: city) { (response, error) in
-            completed(response, error)
-        }
+    static func getCurrentWeather(city: CityModel) async -> WeatherResponse? {
+        let data = await WeatherData.getCurrentWeather(city: city)
+        return data
     }
     
-    static func getForecast(forCity city: CityModel, completed: @escaping ((_ response: ForecastResponse?, _ error: Error?) -> Void)) -> Void {
-        WeatherData.getForecast(city: city) { (response, error) in
-            completed(response, error)
-        }
+    static func getForecast(forCity city: CityModel) async -> ForecastResponse? {
+        let data = await WeatherData.getForecast(city: city)
+        return data
     }
 }

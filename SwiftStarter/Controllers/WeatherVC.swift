@@ -25,25 +25,25 @@ class WeatherVC: UIViewController {
         super.viewWillAppear(animated)
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
-        WeatherBusiness.getCurrentWeather(forCity: .kremlinBicetre) { (response, error) in
+        Task {
+            let currentWeather = await WeatherBusiness.getCurrentWeather(city: .kremlinBicetre)
+            let forecast = await WeatherBusiness.getForecast(forCity: .kremlinBicetre)
+            
             DispatchQueue.main.async {
-                guard let response = response, error == nil else { fatalError((error?.localizedDescription)!) }
-                self.temperatureLabel.text = "\(response.temperature ?? 0) °C"
-                self.descriptionLabel.text = response.weatherInfos?.first?.description?.capitalizingFirstLetter() ?? "Unknown weather"
-                MBProgressHUD.hide(for: self.view, animated: true)
-            }
-        }
-        
-        WeatherBusiness.getForecast(forCity: .kremlinBicetre) { (response, error) in
-            DispatchQueue.main.async {
-                guard let response = response, error == nil else { fatalError((error?.localizedDescription)!) }
+                guard let currentWeather = currentWeather, let forecast = forecast else { return }
+
+                self.temperatureLabel.text = "\(currentWeather.temperature ?? 0) °C"
+                self.descriptionLabel.text = currentWeather.weatherInfos?.first?.description?.capitalizingFirstLetter() ?? "Unknown weather"
+
                 var forecasts: [String] = []
-                for forecast in response.forecasts! {
+                for forecast in forecast.forecasts! {
                     forecasts += (forecast.weatherInfos?.map({ (weatherInfo) in
                         return "\(forecast.hour!): \(forecast.temperature!) °C - \(weatherInfo.description!.capitalizingFirstLetter())\n"
                     }))!
                 }
                 self.forecastTextView.text = forecasts.joined(separator: "\n")
+                
+                MBProgressHUD.hide(for: self.view, animated: true)
             }
         }
     }
