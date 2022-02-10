@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AlamofireImage",
+        "repositoryURL": "https://github.com/Alamofire/AlamofireImage",
+        "state": {
+          "branch": "master",
+          "revision": "af1c41645ef2d3ab48ffb3fb3a11941c71e5f9a0",
+          "version": null
+        }
+      },
+      {
+        "package": "MBProgressHUD",
+        "repositoryURL": "https://github.com/jdg/MBProgressHUD",
+        "state": {
+          "branch": null,
+          "revision": "bca42b801100b2b3a4eda0ba8dd33d858c780b0d",
+          "version": "1.2.0"
+        }
+      },
+      {
+        "package": "ObjectMapper",
+        "repositoryURL": "https://github.com/tristanhimmelman/ObjectMapper",
+        "state": {
+          "branch": "master",
+          "revision": "a593b4d647a970b3d184d046f8f52b945083ccf9",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
