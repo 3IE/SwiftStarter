@@ -31,8 +31,7 @@ In this starter kit, we provide several external frameworks that we use in our p
 - <a href="https://github.com/Alamofire/Alamofire">Alamofire</a> is an HTTP networking library written in Swift.
 - <a href="https://github.com/Alamofire/AlamofireImage">AlamofireImage</a> is an image component library for Alamofire.
 - <a href="https://github.com/Hearst-DD/ObjectMapper">ObjectMapper</a> is a JSON mapping library.
-- <a href="https://github.com/tristanhimmelman/AlamofireObjectMapper">AlamofireObjectMapper</a> is an Alamofire extension which simplifies ObjectMapper usage.
-- <a href="https://github.com/SVProgressHUD/SVProgressHUD">SVProgressHUD</a> is a lightweight progress HUD.
+- <a href="https://github.com/jdg/MBProgressHUD">MBProgressHUD</a> is a lightweight progress HUD.
 
 #### Models
 
@@ -64,26 +63,11 @@ The `Controllers` folder contains all your controllers files (eg. UIViewControll
 
   The `Xib` folder is useful for storing some interface builder file. In this starter kit, we use storyboards. But in order to avoid copying some elements, we put some elements that are useful in several views of our application in interface builder files that we store in the `Xib` folder. For instance, cells that could be use in several views will be in a .xib file in this folder.
 
-### Frameworks
-
-#### Internal
-
-This folder is useful to store all of Apple's frameworks like CoreData, Social, Accounts, HomeKit, ...
-This folder can also contains some frameworks developed by ourselves.
 
 
 ## Installing the external frameworks
 
-We use carthage, so you have to compile the frameworks from a terminal before compiling the project.
-Run this command to download and compile the frameworks referenced in the 'Cartfile.resolved' file.
-```shell
-$ carthage bootstrap --no-use-binaries --platform iOS
-```
-
-To update to the latest version of the frameworks (referenced in the 'Cartfile') and regenerate 'Cartfile.resolved' file, run this command :
-```shell
-$ carthage update --no-use-binaries --platform iOS
-```
+We use Swift Package Manager, so the frameworks are automatically downloaded and compiled on the project by Xcode.
 
 ## Documentation
 
