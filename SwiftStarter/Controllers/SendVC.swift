@@ -21,9 +21,14 @@ class SendVC: UIViewController {
 
     @IBAction func sendDidTapped(_ sender: Any) {
         guard self.textField.text != "" else { return }
-        SendBusiness.sendData(data: self.textField.text!, dateSent: Date()) { (response, error) in
-            guard let response = response, error == nil else { fatalError("no response") }
-            self.responseTextView.text += "At: \(String(describing: response.dateSent!)) - Data: \(String(describing: response.dataReturned!))\n"
+        
+        Task {
+            let response = await SendBusiness.sendData(data: self.textField.text!, dateSent: Date())
+            guard let response = response else { fatalError("no response") }
+            
+            DispatchQueue.main.async {
+                self.responseTextView.text += "At: \(String(describing: response.dateSent!)) - Data: \(String(describing: response.dataReturned!))\n"
+            }
         }
     }
 }

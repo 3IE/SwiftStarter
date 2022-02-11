@@ -9,9 +9,7 @@
 import Foundation
 
 class SendBusiness {
-    static func sendData(data: String, dateSent: Date, completed: @escaping ((_ response: SendResponse?, _ error: Error?) -> Void)) -> Void {
-        SendData.sendData(data: data, dateSent: dateSent) { (response, error) in
-            completed(response, error)
-        }
+    static func sendData(data: String, dateSent: Date) async -> SendResponse? {
+        return await SendData.sendData(data: data, dateSent: dateSent)
     }
 }

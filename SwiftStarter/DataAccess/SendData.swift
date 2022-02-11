@@ -48,18 +48,20 @@ extension Router: URLRequestConvertible {
 }
 
 public class SendData {
-    static func sendData(data: String, dateSent: Date, _ completed: @escaping ((_ response: SendResponse?, _ error: AFError?) -> Void)) -> Void {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let dateString = dateFormatter.string(from: dateSent)
-        let body: [String: String] = ["data": data, "dateSent": dateString]
-        AF.request(Router.sendData(body)).validate().responseString { response in
-            do {
-                let mappedData = try Mapper<SendResponse>().map(JSONString: response.result.get())
-                completed(mappedData, response.error)
-            } catch {
-                print(error.localizedDescription)
-                completed(nil, error as? AFError)
+    static func sendData(data: String, dateSent: Date) async -> SendResponse? {
+        await withCheckedContinuation { continuation in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let dateString = dateFormatter.string(from: dateSent)
+            let body: [String: String] = ["data": data, "dateSent": dateString]
+            
+            AF.request(Router.sendData(body)).validate().responseString { response in
+                do {
+                    let mappedData = try Mapper<SendResponse>().map(JSONString: response.result.get())
+                    continuation.resume(returning: mappedData)
+                } catch {
+                    print(error.localizedDescription)
+                }
             }
         }
     }
