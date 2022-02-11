@@ -1,6 +1,6 @@
 # iOS-Starter2019
 
-Build : [![Build Status](https://travis-ci.org/3IE/iOS-Starter2019.svg?branch=develop)](https://travis-ci.org/3IE/iOS-Starter2019)
+Build : [![Build Status](https://travis-ci.org/3IE/iOS-Starter2019.svg?branch=develop)](https://travis-ci.org/3IE/iOS-Starter)
 
 
 This Starter Kit is a project which we use at 3IE every time we have to begin a new iOS application development.
