@@ -25,8 +25,7 @@ extension ForecastResponse: Mappable {
 struct Forecast {
     var temperature: Int?
     var weatherInfos: [WeatherInfos]?
-    fileprivate var date: String?
-    var hour: String?
+    var date: String?
 }
 
 extension Forecast: Mappable {
@@ -34,9 +33,8 @@ extension Forecast: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        temperature <- map["main.temp"]
+        temperature <- (map["main.temp"])
         weatherInfos <- map["weather"]
         date <- map["dt_txt"]
-        hour = "\(String(describing: date!.components(separatedBy: " ")[1].components(separatedBy: ":00")[0]))h"
     }
 }

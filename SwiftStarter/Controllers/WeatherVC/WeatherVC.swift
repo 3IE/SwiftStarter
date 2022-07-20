@@ -9,43 +9,51 @@
 import MBProgressHUD
 
 class WeatherVC: UIViewController {
-    
+
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var forecastTextView: UITextView!
+    @IBOutlet weak var tableView: UITableView!
     
+    var forecasts = [Forecast]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         self.cityLabel.text = CityModel.kremlinBicetre.name
-        self.forecastTextView.text = ""
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        
+
         Task {
-            let currentWeather = await WeatherBusiness.getCurrentWeather(city: .kremlinBicetre)
-            let forecast = await WeatherBusiness.getForecast(forCity: .kremlinBicetre)
+            let data = await self.getData()
             
             DispatchQueue.main.async {
-                guard let currentWeather = currentWeather, let forecast = forecast else { return }
+                guard let currentWeather = data?.0, let currentForecast = data?.1, let forecasts = currentForecast.forecasts else {
+                    return
+                }
 
                 self.temperatureLabel.text = "\(currentWeather.temperature ?? 0) °C"
                 self.descriptionLabel.text = currentWeather.weatherInfos?.first?.description?.capitalizingFirstLetter() ?? "Unknown weather"
 
-                var forecasts: [String] = []
-                for forecast in forecast.forecasts! {
-                    forecasts += (forecast.weatherInfos?.map({ (weatherInfo) in
-                        return "\(forecast.hour!): \(forecast.temperature!) °C - \(weatherInfo.description!.capitalizingFirstLetter())\n"
-                    }))!
-                }
-                self.forecastTextView.text = forecasts.joined(separator: "\n")
-                
+                self.forecasts = forecasts
                 MBProgressHUD.hide(for: self.view, animated: true)
+                self.tableView.reloadData()
             }
         }
+    }
+    
+    func getData() async -> (WeatherResponse?, ForecastResponse?)? {
+        await withTaskGroup(of: (WeatherResponse?, ForecastResponse?).self, body: { task in
+            task.addTask {
+                return await (WeatherBusiness.getCurrentWeather(city: .kremlinBicetre), WeatherBusiness.getForecast(forCity: .kremlinBicetre))
+            }
+            
+            return await task.next()
+        })
     }
 }
 
