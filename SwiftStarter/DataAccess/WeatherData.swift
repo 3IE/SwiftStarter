@@ -53,7 +53,10 @@ public class WeatherData {
             AF.request(Router.currentWeather(city)).validate().responseString { response in
                 do {
                     let mappedData = try Mapper<WeatherResponse>().map(JSONString: response.result.get())
-                    continuation.resume(returning: mappedData)
+                    
+                    DispatchQueue.global(qos: .background).async {
+                        continuation.resume(returning: mappedData)
+                    }
                 } catch {
                     print(error.localizedDescription)
                 }

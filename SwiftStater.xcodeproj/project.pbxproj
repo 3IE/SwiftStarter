@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3028743D287C1C1600227C6E /* WeatherVC+TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3028743C287C1C1600227C6E /* WeatherVC+TableViewExtension.swift */; };
 		302CDFCE27B5571000B943B0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 302CDFCD27B5571000B943B0 /* Alamofire */; };
 		302CDFD127B5571B00B943B0 /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 302CDFD027B5571B00B943B0 /* ObjectMapper */; };
 		302CDFD427B5572A00B943B0 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 302CDFD327B5572A00B943B0 /* AlamofireImage */; };
@@ -44,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		301F54A927BABF7F00F0A3E6 /* SwiftStarter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftStarter.entitlements; sourceTree = "<group>"; };
+		3028743C287C1C1600227C6E /* WeatherVC+TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherVC+TableViewExtension.swift"; sourceTree = "<group>"; };
 		304155AA2211845C0096A5B0 /* SwiftStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		304155AD2211845C0096A5B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		304155AF2211845C0096A5B0 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
@@ -80,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3028743E287C1D3300227C6E /* WeatherVC */ = {
+			isa = PBXGroup;
+			children = (
+				304155AF2211845C0096A5B0 /* WeatherVC.swift */,
+				3028743C287C1C1600227C6E /* WeatherVC+TableViewExtension.swift */,
+			);
+			path = WeatherVC;
+			sourceTree = "<group>";
+		};
 		304155A12211845C0096A5B0 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +111,7 @@
 		304155AC2211845C0096A5B0 /* SwiftStarter */ = {
 			isa = PBXGroup;
 			children = (
+				301F54A927BABF7F00F0A3E6 /* SwiftStarter.entitlements */,
 				304155AD2211845C0096A5B0 /* AppDelegate.swift */,
 				304155D6221187310096A5B0 /* DataAccess */,
 				304155DC221188290096A5B0 /* Models */,
@@ -132,7 +145,7 @@
 		304155D9221187F60096A5B0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				304155AF2211845C0096A5B0 /* WeatherVC.swift */,
+				3028743E287C1D3300227C6E /* WeatherVC */,
 				3088C1682212CD9500DB7C07 /* SendVC.swift */,
 			);
 			path = Controllers;
@@ -269,6 +282,7 @@
 				30A16E532211B2A5007AD549 /* WeatherResponse.swift in Sources */,
 				30A16E5B2211C7CD007AD549 /* ForecastResponse.swift in Sources */,
 				3088C1692212CD9500DB7C07 /* SendVC.swift in Sources */,
+				3028743D287C1C1600227C6E /* WeatherVC+TableViewExtension.swift in Sources */,
 				304155E32211AD7E0096A5B0 /* RouterProtocol.swift in Sources */,
 				30A16E572211B694007AD549 /* CityModel.swift in Sources */,
 				304155B02211845C0096A5B0 /* WeatherVC.swift in Sources */,
@@ -422,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwiftStarter/SwiftStarter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZA25QH9A8G;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -430,14 +445,17 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftStarter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.3ie.iOS-Starter2019";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -445,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwiftStarter/SwiftStarter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZA25QH9A8G;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -453,14 +472,17 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftStarter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.3ie.iOS-Starter2019";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
